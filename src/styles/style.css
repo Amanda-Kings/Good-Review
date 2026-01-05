@@ -2,35 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Custom animations */
+/* Custom animations - 优化性能 */
 @keyframes blob {
   0% {
-    transform: translate(0px, 0px) scale(1);
+    transform: translate3d(0px, 0px, 0) scale(1);
   }
   33% {
-    transform: translate(30px, -50px) scale(1.1);
+    transform: translate3d(30px, -50px, 0) scale(1.1);
   }
   66% {
-    transform: translate(-20px, 20px) scale(0.9);
+    transform: translate3d(-20px, 20px, 0) scale(0.9);
   }
   100% {
-    transform: translate(0px, 0px) scale(1);
+    transform: translate3d(0px, 0px, 0) scale(1);
   }
 }
 
 @keyframes fade-in {
   from {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translate3d(0, 10px, 0);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translate3d(0, 0, 0);
   }
 }
 
 .animate-blob {
   animation: blob 7s infinite;
+  will-change: transform;
+  transform: translate3d(0, 0, 0); /* 启用硬件加速 */
 }
 
 .animation-delay-1000 {
@@ -61,13 +63,14 @@
   animation: fade-in 0.5s ease-out;
 }
 
-/* Glass morphism effects */
+/* Glass morphism effects - 优化性能 */
 .glass-panel {
   background: rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(var(--glass-blur));
   -webkit-backdrop-filter: blur(var(--glass-blur));
   border: 1px solid rgba(255, 255, 255, 0.4);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+  will-change: backdrop-filter; /* 优化backdrop-filter性能 */
 }
 
 .glass-panel-light {
@@ -75,6 +78,7 @@
   backdrop-filter: blur(calc(var(--glass-blur) * 0.6));
   -webkit-backdrop-filter: blur(calc(var(--glass-blur) * 0.6));
   border: 1px solid rgba(255, 255, 255, 0.18);
+  will-change: backdrop-filter;
 }
 
 .glass-panel-modal {
@@ -83,6 +87,7 @@
   -webkit-backdrop-filter: blur(calc(var(--glass-blur) * 1.25));
   border: 1px solid rgba(255, 255, 255, 0.3);
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  will-change: backdrop-filter;
 }
 
 .glass-card {
@@ -91,6 +96,7 @@
   -webkit-backdrop-filter: blur(calc(var(--glass-blur) * 0.75));
   border: 1px solid rgba(255, 255, 255, 0.5);
   box-shadow: 0 4px 16px 0 rgba(31, 38, 135, 0.05);
+  will-change: backdrop-filter;
 }
 
 .glass-button {
@@ -301,6 +307,30 @@
 
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(148, 163, 184, 0.5);
+}
+
+/* 性能优化 */
+* {
+  /* 减少重绘和回流 */
+  box-sizing: border-box;
+}
+
+/* 优化动画性能 */
+.animate-blob,
+.glass-panel,
+.glass-card,
+.glass-panel-modal,
+.glass-panel-light {
+  /* 启用GPU加速 */
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* 减少不必要的重绘 */
+img {
+  image-rendering: optimizeSpeed;
+  image-rendering: -webkit-optimize-contrast;
 }
 
 /* Slider styling for blur intensity control */

@@ -14,6 +14,7 @@ import AlgorithmAnalysisAndDesign from '../assets/data/算法分析选择题.jso
 // import DPJChooice_HG from '../assets/data/友情赞助/湖工—单片机.json'
 // import DPJAdjustment_HG from '../assets/data/友情赞助/湖工—判断题.json'
 import DPJSummary from '../assets/data/单片机2025复习题/单片机复习题2025选择判断填空.json'
+import SYSTEM_BLANK_QUESTIONS from '../assets/data/操作系统填空题.json'
 
 export const USERSCRIPT_CONTENT = `// ==UserScript==
 // @name         Chaoxing Work Scraper
@@ -42,8 +43,7 @@ export const DEFAULT_BANKS: QuestionBank[] = [
     name: 'Python程序设计',
     createdAt: 1765262408306,
     questions: PYTHON_BANK_QUESTIONS
-  }
-  ,
+  },
   {
     id: 'default-web',
     name: 'Web前端开发',
@@ -57,70 +57,75 @@ export const DEFAULT_BANKS: QuestionBank[] = [
     questions: SYSTEM_BANK_QUESTIONS
   },
   {
-    id: 'default-system',
+    id: 'default-system-blank',
+    name: '操作系统填空题',
+    createdAt: 1765255903194,
+    questions: SYSTEM_BLANK_QUESTIONS
+  },
+  {
+    id: 'default-dpj1',
     name: '单片机1-基础知识',
-    createdAt: 1765255903193,
+    createdAt: 1765255903195,
     questions: DPJ1
   },
   {
-    id: 'default-system',
+    id: 'default-dpj2',
     name: '单片机2-C语言编程基础',
-    createdAt: 1765255903193,
+    createdAt: 1765255903196,
     questions: DPJ2
   },
   {
-    id: 'default-system',
+    id: 'default-dpj3',
     name: '单片机3-IO口的C语言编程',
-    createdAt: 1765255903193,
+    createdAt: 1765255903197,
     questions: DPJ3
   },
   {
-    id: 'default-system',
+    id: 'default-dpj4',
     name: '单片机4-中断定时计数器串口C语言编程',
-    createdAt: 1765255903193,
+    createdAt: 1765255903198,
     questions: DPJ4
   },
   {
-    id: 'default-system',
+    id: 'default-dpj5',
     name: '单片机5-LCD1602显示屏和AD、DA转换',
-    createdAt: 1765255903193,
+    createdAt: 1765255903199,
     questions: DPJ5
   },
   {
-    id: 'default-system',
+    id: 'default-dpj7',
     name: '单片机7-总线',
-    createdAt: 1765255903193,
+    createdAt: 1765255903200,
     questions: DPJ7
   },
   {
-    id: 'default-system',
+    id: 'default-dpj8',
     name: '单片机8-温度传感器',
-    createdAt: 1765255903193,
+    createdAt: 1765255903201,
     questions: DPJ8
   },
   {
-    id: 'default-system',
+    id: 'default-algorithm',
     name: '算法分析选择、判断题',
-    createdAt: 1765255903193,
+    createdAt: 1765255903202,
     questions: AlgorithmAnalysisAndDesign
   },
   // {
-  //   id: 'default-system',
+  //   id: 'default-dpj-hg-choice',
   //   name: '[赞助]湖工—单片机选择题',
-  //   createdAt: 1765255903193,
+  //   createdAt: 1765255903203,
   //   questions: DPJChooice_HG
   // },
   // {
-  //   id: 'default-system',
+  //   id: 'default-dpj-hg-judge',
   //   name: '[赞助]湖工—单片机判断题',
-  //   createdAt: 1765255903193,
+  //   createdAt: 1765255903204,
   //   questions: DPJAdjustment_HG
   // },
   {
-    id: 'default-system',
+    id: 'default-dpj-summary',
     name: '单片机复习题2025选择判断填空',
-    createdAt: 1765255903193,
+    createdAt: 1765255903205,
     questions: DPJSummary
   }
-
 ];

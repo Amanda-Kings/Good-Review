@@ -405,11 +405,18 @@ const isCurrentCorrect = computed(() => {
 const results = computed(() => {
   let correct = 0
   let wrong = 0
-  questions.value.forEach((q, idx) => {
-     const res = checkAnswer(q, userAnswers.value[idx] || [])
-     if (res === true) correct++
-     else wrong++
+  
+  // 只计算已回答的题目，避免不必要的计算
+  Object.keys(userAnswers.value).forEach(idxStr => {
+    const idx = parseInt(idxStr)
+    if (idx < questions.value.length) {
+      const q = questions.value[idx]
+      const res = checkAnswer(q, userAnswers.value[idx] || [])
+      if (res === true) correct++
+      else wrong++
+    }
   })
+  
   return { correct, wrong }
 })
 
@@ -466,9 +473,6 @@ const renderTitle = (title: string) => {
     let processedTitle = title
       .replace(/\\"/g, '"')  // JSON转义的双引号
       .replace(/\\'/g, "'")  // JSON转义的单引号
-    
-    console.log('Original title:', title)
-    console.log('Processed title (as text):', processedTitle)
     
     // 使用textContent而不是innerHTML，这样HTML标签会作为文本显示
     return h('div', {
@@ -615,11 +619,8 @@ const getOptionText = (opt: any) => {
 }
 
 const getImageUrl = (imagePath: string) => {
-  console.log('Original image path:', imagePath)
-  
   // 如果是完整的URL（http/https），直接返回
   if (imagePath.startsWith('http://') || imagePath.startsWith('https://')) {
-    console.log('Returning URL as-is:', imagePath)
     return imagePath
   }
   
@@ -634,7 +635,6 @@ const getImageUrl = (imagePath: string) => {
     finalUrl = baseUrl + cleanPath
   }
   
-  console.log('Final image URL:', finalUrl)
   return finalUrl
 }
 

@@ -125,6 +125,7 @@ export class AIService {
     return prompt
   }
 
+  
   private removeThinkingContent(content: string): string {
     // 移除DeepSeek-R1的thinking标签内容
     return content

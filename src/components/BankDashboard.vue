@@ -222,6 +222,20 @@ const filterGroups = computed<FilterGroup[]>(() => {
           questions: chunk
         })
       }
+    }
+    // Chunking logic for '填空' if > 15
+    else if (type === '填空' && questions.length > 15) {
+      const chunkSize = 15
+      for (let i = 0; i < questions.length; i += chunkSize) {
+        const chunk = questions.slice(i, i + chunkSize)
+        const chunkIndex = Math.floor(i / chunkSize) + 1
+        groups.push({
+          id: `${type}_part_${chunkIndex}`,
+          label: `${type}题 ${chunkIndex}`,
+          count: chunk.length,
+          questions: chunk
+        })
+      }
     } else {
       groups.push({
         id: type,
@@ -253,9 +267,10 @@ const handleStartClick = (bank: QuestionBank) => {
   bank.questions.forEach(q => typeMap.set(q.type, (typeMap.get(q.type) || 0) + 1))
   
   const hasLargeSingleChoice = (typeMap.get('单选') || 0) > 50
+  const hasLargeBlankFill = (typeMap.get('填空') || 0) > 15
   const hasMultipleTypes = typeMap.size > 1
 
-  if (hasMultipleTypes || hasLargeSingleChoice) {
+  if (hasMultipleTypes || hasLargeSingleChoice || hasLargeBlankFill) {
     configBank.value = bank
     
     // Pre-select all groups
@@ -263,6 +278,9 @@ const handleStartClick = (bank: QuestionBank) => {
     typeMap.forEach((count, type) => {
        if (type === '单选' && count > 50) {
            const chunks = Math.ceil(count / 50)
+           for(let i=1; i<=chunks; i++) tempGroups.push(`${type}_part_${i}`)
+       } else if (type === '填空' && count > 15) {
+           const chunks = Math.ceil(count / 15)
            for(let i=1; i<=chunks; i++) tempGroups.push(`${type}_part_${i}`)
        } else {
            tempGroups.push(type)

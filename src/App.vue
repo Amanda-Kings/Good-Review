@@ -8,28 +8,17 @@
     <!-- Custom Background Image Overlay (if image exists) -->
     <div v-if="backgroundImage" class="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/30"></div>
     
-    <!-- Animated Background Blobs (only show if no custom image) -->
+    <!-- Animated Background Blobs (only show if no custom image) - 优化性能 -->
     <div v-if="!backgroundImage" class="absolute inset-0 overflow-hidden pointer-events-none">
+      <!-- 减少blob数量，只保留主要的4个 -->
       <!-- Main Green Blob - Emerald (Dominant) -->
       <div class="absolute top-[-15%] left-[-15%] w-[60vw] h-[60vw] bg-emerald-100 rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-blob"></div>
       <!-- Secondary Green Blob - Teal (Large) -->
       <div class="absolute top-[30%] left-[35%] w-[45vw] h-[45vw] bg-teal-100 rounded-full mix-blend-multiply filter blur-3xl opacity-35 animate-blob animation-delay-3000"></div>
       <!-- Third Green Blob - Lime (Medium) -->
       <div class="absolute bottom-[-10%] right-[-10%] w-[50vw] h-[50vw] bg-lime-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
-      <!-- Fourth Green Blob - Cyan (Medium) -->
-      <div class="absolute top-[15%] left-[-8%] w-[40vw] h-[40vw] bg-cyan-100 rounded-full mix-blend-multiply filter blur-3xl opacity-25 animate-blob animation-delay-4000"></div>
-      
-      <!-- Accent Colors (Smaller, Lower Opacity) -->
-      <!-- Purple Accent (Small) -->
-      <div class="absolute top-[-5%] right-[-5%] w-[25vw] h-[25vw] bg-purple-100 rounded-full mix-blend-multiply filter blur-3xl opacity-15 animate-blob animation-delay-2000"></div>
-      <!-- Pink Accent (Small) -->
-      <div class="absolute bottom-[-5%] left-[-5%] w-[20vw] h-[20vw] bg-pink-100 rounded-full mix-blend-multiply filter blur-3xl opacity-12 animate-blob animation-delay-4000"></div>
       <!-- Yellow Accent (Small) -->
-      <div class="absolute top-[5%] left-[60%] w-[18vw] h-[18vw] bg-yellow-100 rounded-full mix-blend-multiply filter blur-3xl opacity-15 animate-blob animation-delay-1000"></div>
-      <!-- Amber Accent (Tiny) -->
-      <div class="absolute top-[50%] right-[5%] w-[15vw] h-[15vw] bg-amber-100 rounded-full mix-blend-multiply filter blur-3xl opacity-12 animate-blob animation-delay-3500"></div>
-      <!-- Orange Accent (Tiny) -->
-      <div class="absolute bottom-[20%] left-[70%] w-[12vw] h-[12vw] bg-orange-100 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob animation-delay-1500"></div>
+      <div class="absolute top-[5%] left-[60%] w-[25vw] h-[25vw] bg-yellow-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-1000"></div>
     </div>
 
     <!-- Scrollable Container -->
@@ -463,10 +452,8 @@ const toggleLanguage = () => {
 
 // 重置背景色
 const resetBackground = () => {
-  console.log('Resetting background...')
   backgroundImage.value = null
   localStorage.removeItem('background-image')
-  console.log('Background reset and removed from localStorage')
   showSettingsDropdown.value = false
 }
 
@@ -522,18 +509,14 @@ const handleImageUpload = async (event: Event) => {
   }
   
   try {
-    console.log('Original file size:', file.size)
-    
     // 压缩图片
     const compressedDataUrl = await compressImage(file, 1920, 0.7)
-    console.log('Compressed image data length:', compressedDataUrl.length)
     
     // 检查压缩后的大小（localStorage通常限制在5MB左右）
     const maxLocalStorageSize = 4 * 1024 * 1024 // 4MB安全限制
     if (compressedDataUrl.length > maxLocalStorageSize) {
       // 如果还是太大，进一步压缩
       const furtherCompressed = await compressImage(file, 1280, 0.5)
-      console.log('Further compressed image data length:', furtherCompressed.length)
       
       if (furtherCompressed.length > maxLocalStorageSize) {
         alert(t('app.settings.imageTooLarge'))
@@ -547,12 +530,7 @@ const handleImageUpload = async (event: Event) => {
       localStorage.setItem('background-image', compressedDataUrl)
     }
     
-    // 验证保存是否成功
-    const saved = localStorage.getItem('background-image')
-    console.log('Image saved to localStorage:', !!saved)
-    
     showSettingsDropdown.value = false
-    console.log('Background image uploaded and saved successfully')
   } catch (error) {
     console.error('Error processing image:', error)
     alert(t('app.settings.processingError') + (error as Error).message)
@@ -599,10 +577,8 @@ const loadAIConfig = () => {
   }
 }
 const removeBackgroundImage = () => {
-  console.log('Removing background image...')
   backgroundImage.value = null
   localStorage.removeItem('background-image')
-  console.log('Background image removed from localStorage')
   showSettingsDropdown.value = false
   
   // 清空文件输入
