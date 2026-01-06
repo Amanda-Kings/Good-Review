@@ -179,7 +179,7 @@
           
           <button 
             v-if="!revealed[currentIdx]"
-            @click="setRevealed(currentIdx, true)"
+            @click="() => { answeredBeforeReveal[currentIdx] = true; setRevealed(currentIdx, true) }"
             :disabled="!hasValidAnswers()"
             class="w-full sm:w-auto px-8 py-3.5 bg-brand-600 hover:bg-brand-700 disabled:bg-slate-300/50 disabled:cursor-not-allowed text-white rounded-2xl font-bold shadow-lg shadow-brand-500/30 transition-all flex items-center justify-center gap-2 ml-auto"
           >
@@ -369,6 +369,7 @@ const questions = ref<QuestionItem[]>(props.initialQuestions || props.bank.quest
 const currentIdx = ref(0)
 const userAnswers = ref<Record<number, string[]>>({})
 const revealed = ref<Record<number, boolean>>({})
+const answeredBeforeReveal = ref<Record<number, boolean>>({}) // 记录是否在查看答案前就已回答
 const isFinished = ref(false)
 const showImageModal = ref(false)
 const selectedImage = ref('')
@@ -406,14 +407,23 @@ const results = computed(() => {
   let correct = 0
   let wrong = 0
   
-  // 只计算已回答的题目，避免不必要的计算
-  Object.keys(userAnswers.value).forEach(idxStr => {
+  // 遍历所有已显示答案的题目
+  Object.keys(revealed.value).forEach(idxStr => {
     const idx = parseInt(idxStr)
-    if (idx < questions.value.length) {
+    if (idx < questions.value.length && revealed.value[idx]) {
       const q = questions.value[idx]
-      const res = checkAnswer(q, userAnswers.value[idx] || [])
-      if (res === true) correct++
-      else wrong++
+      const userAns = userAnswers.value[idx] || []
+      const wasAnsweredFirst = answeredBeforeReveal.value[idx] || false
+      
+      // 如果用户在查看答案前就回答了，按正常逻辑判断
+      if (wasAnsweredFirst) {
+        const res = checkAnswer(q, userAns)
+        if (res === true) correct++
+        else wrong++
+      } else {
+        // 如果直接查看答案，计为错误
+        wrong++
+      }
     }
   })
   
@@ -423,18 +433,59 @@ const results = computed(() => {
 const isPerfect = computed(() => results.value.wrong === 0)
 
 // Methods
-const checkAnswer = (q: QuestionItem, userAns: string[]) => {
-  const normalize = (s: string) => s.trim().toLowerCase()
-      .replace(/[\uff01-\uff5e]/g, (ch) => String.fromCharCode(ch.charCodeAt(0) - 0xfee0))
-      .replace(/。/g, '.')
-      .replace(/，/g, ',')
-      .replace(/：/g, ':')
-      .replace(/？/g, '?')
-      .replace(/！/g, '!')
-      .replace(/（/g, '(')
-      .replace(/）/g, ')')
-      .replace(/\s+/g, ' ')
+const normalizeText = (s: string) => {
+  return s.trim()
+    .toLowerCase()
+    // 转换全角字符为半角
+    .replace(/[\uff01-\uff5e]/g, (ch) => String.fromCharCode(ch.charCodeAt(0) - 0xfee0))
+    // 处理CJK兼容字符 - 将特殊编码的汉字转换为标准汉字
+    .replace(/[\u2f00-\u2fff]/g, (ch) => {
+      // 这是CJK部首补充区，需要转换为对应的标准汉字
+      const code = ch.charCodeAt(0)
+      // 特殊处理一些常见的字符映射
+      const mapping: Record<number, string> = {
+        0x2f42: '文', // ⽂ -> 文
+        0x2f06: '人', // ⼈ -> 人
+        0x2f08: '入', // ⼊ -> 入
+        0x2f0a: '刀', // ⼑ -> 刀
+        0x2f0b: '力', // ⼒ -> 力
+        0x2f11: '口', // ⼝ -> 口
+        0x2f1c: '大', // ⼤ -> 大
+        0x2f1d: '女', // ⼥ -> 女
+        0x2f1f: '子', // ⼦ -> 子
+        0x2f24: '心', // ⼼ -> 心
+        0x2f2c: '手', // ⼿ -> 手
+        0x2f38: '水', // ⽔ -> 水
+        0x2f3a: '火', // ⽕ -> 火
+        0x2f3e: '田', // ⽥ -> 田
+        0x2f52: '网', // ⽹ -> 网
+        0x2f5f: '糸', // ⽷ -> 糸
+        0x2f70: '艸', // ⾋ -> 艸
+        0x2f75: '言', // ⾔ -> 言
+        0x2f8a: '金', // ⾦ -> 金
+      }
+      return mapping[code] || ch
+    })
+    // 标点符号统一
+    .replace(/。/g, '.')
+    .replace(/，/g, ',')
+    .replace(/：/g, ':')
+    .replace(/？/g, '?')
+    .replace(/！/g, '!')
+    .replace(/（/g, '(')
+    .replace(/）/g, ')')
+    // 处理空白字符
+    .replace(/\s+/g, ' ')
+    // 移除常见的无关字符
+    .replace(/[""'']/g, '"')
+    .replace(/[、]/g, ',')
+    // 移除末尾的标点符号
+    .replace(/[.,;:!?]+$/, '')
+    // Unicode规范化 - 将不同编码的相同字符统一
+    .normalize('NFKC')
+}
 
+const checkAnswer = (q: QuestionItem, userAns: string[]) => {
   const correct = q.correctAnswer || []
   if (correct.length === 0) return null
 
@@ -449,19 +500,39 @@ const checkAnswer = (q: QuestionItem, userAns: string[]) => {
       
       for (let i = 0; i < blankCount; i++) {
         if (!userAns[i] || !correct[i]) return false
-        if (normalize(userAns[i]) !== normalize(correct[i])) return false
+        const userNorm = normalizeText(userAns[i])
+        const correctNorm = normalizeText(correct[i])
+        
+        // 如果完全匹配，认为正确
+        if (userNorm === correctNorm) continue
+        
+        // 如果用户答案包含正确答案或正确答案包含用户答案，也认为正确
+        if (userNorm.includes(correctNorm) || correctNorm.includes(userNorm)) continue
+        
+        return false
       }
       return true
     } else {
       // 单个填空：检查第一个答案是否匹配任何正确答案
-      return userAns.length > 0 && correct.some(c => normalize(c) === normalize(userAns[0]))
+      if (userAns.length === 0) return false
+      const userNorm = normalizeText(userAns[0])
+      
+      return correct.some(c => {
+        const correctNorm = normalizeText(c)
+        // 完全匹配
+        if (userNorm === correctNorm) return true
+        // 包含关系匹配
+        if (userNorm.includes(correctNorm) || correctNorm.includes(userNorm)) return true
+        return false
+      })
     }
   }
 
+  // 选择题和判断题的逻辑保持不变
   if (userAns.length !== correct.length) return false
   const s1 = [...userAns].sort()
   const s2 = [...correct].sort()
-  return s1.every((val, index) => normalize(val) === normalize(s2[index]))
+  return s1.every((val, index) => normalizeText(val) === normalizeText(s2[index]))
 }
 
 const renderTitle = (title: string) => {
@@ -714,6 +785,8 @@ const handleSelect = (val: string) => {
     }
   } else {
     userAnswers.value[currentIdx.value] = [val]
+    // 记录用户在查看答案前就已回答
+    answeredBeforeReveal.value[currentIdx.value] = true
     setRevealed(currentIdx.value, true)
   }
 }
@@ -722,6 +795,10 @@ const handleTextChange = (e: Event) => {
   if (revealed.value[currentIdx.value]) return
   const val = (e.target as HTMLTextAreaElement).value
   userAnswers.value[currentIdx.value] = [val]
+  // 记录用户正在输入答案
+  if (val.trim()) {
+    answeredBeforeReveal.value[currentIdx.value] = true
+  }
 }
 
 const handleBlankChange = (index: number, e: Event) => {
@@ -731,6 +808,11 @@ const handleBlankChange = (index: number, e: Event) => {
   const newAnswers = [...current]
   newAnswers[index] = val
   userAnswers.value[currentIdx.value] = newAnswers
+  
+  // 记录用户正在输入答案
+  if (val.trim()) {
+    answeredBeforeReveal.value[currentIdx.value] = true
+  }
 }
 
 const getBlankCount = (title: string) => {
@@ -746,18 +828,13 @@ const isBlankCorrect = (index: number) => {
   
   if (index >= correctAns.length || index >= userAns.length) return false
   
-  const normalize = (s: string) => s.trim().toLowerCase()
-      .replace(/[\uff01-\uff5e]/g, (ch) => String.fromCharCode(ch.charCodeAt(0) - 0xfee0))
-      .replace(/。/g, '.')
-      .replace(/，/g, ',')
-      .replace(/：/g, ':')
-      .replace(/？/g, '?')
-      .replace(/！/g, '!')
-      .replace(/（/g, '(')
-      .replace(/）/g, ')')
-      .replace(/\s+/g, ' ')
+  const userNorm = normalizeText(userAns[index])
+  const correctNorm = normalizeText(correctAns[index])
   
-  return normalize(userAns[index]) === normalize(correctAns[index])
+  // 完全匹配或包含关系匹配
+  return userNorm === correctNorm || 
+         userNorm.includes(correctNorm) || 
+         correctNorm.includes(userNorm)
 }
 
 const hasValidAnswers = () => {
@@ -777,6 +854,8 @@ const handleTextKeyDown = (e: KeyboardEvent) => {
   if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault()
       if (userAnswers.value[currentIdx.value]?.[0]?.trim()) {
+        // 记录用户在查看答案前就已回答
+        answeredBeforeReveal.value[currentIdx.value] = true
         setRevealed(currentIdx.value, true)
       }
   }
@@ -806,8 +885,19 @@ const toggleReveal = () => {
 
 const handleRetryMistakes = () => {
   const wrongQuestions = questions.value.filter((q, idx) => {
+    // 只有已显示答案的题目才参与错题筛选
+    if (!revealed.value[idx]) return false
+    
     const userAns = userAnswers.value[idx] || []
-    return checkAnswer(q, userAns) === false
+    const wasAnsweredFirst = answeredBeforeReveal.value[idx] || false
+    
+    // 如果用户在查看答案前就回答了，按正常逻辑判断
+    if (wasAnsweredFirst) {
+      return checkAnswer(q, userAns) === false
+    } else {
+      // 如果直接查看答案，也算错题
+      return true
+    }
   })
 
   if (wrongQuestions.length > 0) {
@@ -815,6 +905,7 @@ const handleRetryMistakes = () => {
     currentIdx.value = 0
     userAnswers.value = {}
     revealed.value = {}
+    answeredBeforeReveal.value = {}
     isFinished.value = false
   }
 }
