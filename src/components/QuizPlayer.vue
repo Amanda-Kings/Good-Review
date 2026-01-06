@@ -132,8 +132,12 @@
         <div v-if="isText" class="space-y-4">
           <!-- 检测题目中的空格数量，为每个空格创建输入框 -->
           <div v-if="getBlankCount(question.title) > 1" class="space-y-3">
-            <div class="text-sm font-medium text-slate-600 mb-3">
-              请依次填入 {{ getBlankCount(question.title) }} 个答案：
+            <div class="text-sm font-medium text-slate-600 mb-3 flex items-center justify-between">
+              <span>请依次填入 {{ getBlankCount(question.title) }} 个答案：</span>
+              <span class="text-xs text-slate-400 flex items-center gap-1">
+                <span>↑↓</span>
+                <span>切换输入框</span>
+              </span>
             </div>
             <div 
               v-for="(blank, index) in getBlankCount(question.title)" 
@@ -142,6 +146,7 @@
             >
               <span class="text-sm font-bold text-slate-500 w-8">{{ index + 1 }}.</span>
               <input 
+                :ref="(el) => { if (el) blankInputRefs[index] = el as HTMLInputElement }"
                 :class="[
                   'flex-1 p-4 glass-input rounded-2xl outline-none focus:ring-0 transition-all text-lg font-medium placeholder:text-slate-400',
                   revealed[currentIdx] 
@@ -153,7 +158,7 @@
                 :placeholder="`第 ${index + 1} 个答案`"
                 :value="userAnswers[currentIdx]?.[index] || ''"
                 @input="handleBlankChange(index, $event)"
-                @keydown="handleTextKeyDown"
+                @keydown="handleBlankKeyDown(index, $event)"
                 :disabled="revealed[currentIdx]"
               />
             </div>
@@ -162,6 +167,7 @@
           <!-- 单个填空的情况，保持原有的大文本框 -->
           <textarea 
             v-else
+            ref="textareaRef"
             :class="[
               'w-full p-6 glass-input rounded-3xl outline-none focus:ring-0 transition-all min-h-[160px] text-lg font-medium placeholder:text-slate-400',
               revealed[currentIdx] 
@@ -345,7 +351,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted, onUnmounted, h } from 'vue'
+import { ref, computed, onMounted, onUnmounted, h, nextTick } from 'vue'
 import { ArrowLeft, CheckCircle, XCircle, ChevronLeft, ChevronRight, Eye, EyeOff, RotateCcw, LayoutDashboard, Trophy, CheckSquare, X, Copy, Bot } from 'lucide-vue-next'
 import type { QuestionBank, QuestionItem } from '../types/types'
 import { useLanguage } from '../composables/useLanguage'
@@ -377,6 +383,8 @@ const copyButtonText = ref('复制题目')
 const showAIAnswer = ref(false)
 const aiAnswer = ref('')
 const aiLoading = ref(false)
+const blankInputRefs = ref<Record<number, HTMLInputElement>>({}) // 填空输入框的引用
+const textareaRef = ref<HTMLTextAreaElement | null>(null) // 单个填空textarea的引用
 
 // Computed
 const total = computed(() => questions.value.length)
@@ -801,6 +809,76 @@ const handleTextChange = (e: Event) => {
   }
 }
 
+const handleBlankKeyDown = (index: number, e: KeyboardEvent) => {
+  if (revealed.value[currentIdx.value]) return
+  
+  const blankCount = getBlankCount(question.value?.title || '')
+  
+  // 处理上下箭头键跳转
+  if (e.key === 'ArrowUp') {
+    e.preventDefault()
+    const prevIndex = index > 0 ? index - 1 : blankCount - 1
+    const prevInput = blankInputRefs.value[prevIndex]
+    if (prevInput) {
+      prevInput.focus()
+      // 将光标移到末尾
+      setTimeout(() => {
+        prevInput.setSelectionRange(prevInput.value.length, prevInput.value.length)
+      }, 0)
+    }
+  } else if (e.key === 'ArrowDown') {
+    e.preventDefault()
+    const nextIndex = index < blankCount - 1 ? index + 1 : 0
+    const nextInput = blankInputRefs.value[nextIndex]
+    if (nextInput) {
+      nextInput.focus()
+      // 将光标移到末尾
+      setTimeout(() => {
+        nextInput.setSelectionRange(nextInput.value.length, nextInput.value.length)
+      }, 0)
+    }
+  } else if (e.key === 'Enter' && !e.shiftKey) {
+    e.preventDefault()
+    // 如果当前输入框有内容，跳转到下一个空的输入框
+    const currentValue = userAnswers.value[currentIdx.value]?.[index] || ''
+    if (currentValue.trim()) {
+      // 查找下一个空的输入框
+      let nextEmptyIndex = -1
+      const currentAnswers = userAnswers.value[currentIdx.value] || []
+      
+      for (let i = index + 1; i < blankCount; i++) {
+        if (!currentAnswers[i] || !currentAnswers[i].trim()) {
+          nextEmptyIndex = i
+          break
+        }
+      }
+      
+      // 如果没找到后面的空输入框，从头开始找
+      if (nextEmptyIndex === -1) {
+        for (let i = 0; i < index; i++) {
+          if (!currentAnswers[i] || !currentAnswers[i].trim()) {
+            nextEmptyIndex = i
+            break
+          }
+        }
+      }
+      
+      if (nextEmptyIndex !== -1) {
+        const nextInput = blankInputRefs.value[nextEmptyIndex]
+        if (nextInput) {
+          nextInput.focus()
+        }
+      } else {
+        // 所有输入框都有内容，提交答案
+        if (hasValidAnswers()) {
+          answeredBeforeReveal.value[currentIdx.value] = true
+          setRevealed(currentIdx.value, true)
+        }
+      }
+    }
+  }
+}
+
 const handleBlankChange = (index: number, e: Event) => {
   if (revealed.value[currentIdx.value]) return
   const val = (e.target as HTMLInputElement).value
@@ -866,17 +944,54 @@ const setRevealed = (idx: number, value: boolean) => {
 }
 
 const nextQuestion = () => {
+  // 清空当前题目的输入框引用
+  blankInputRefs.value = {}
+  
   if (currentIdx.value < total.value - 1) {
     currentIdx.value++
+    // 切换题目后自动聚焦到输入框
+    autoFocusInput()
   } else {
     isFinished.value = true
   }
 }
 
 const prevQuestion = () => {
+  // 清空当前题目的输入框引用
+  blankInputRefs.value = {}
+  
   if (currentIdx.value > 0) {
     currentIdx.value--
+    // 切换题目后自动聚焦到输入框
+    autoFocusInput()
   }
+}
+
+const autoFocusInput = () => {
+  // 使用nextTick确保DOM已更新
+  nextTick(() => {
+    if (!question.value) return
+    
+    const isTextType = question.value.type.includes("填空") || question.value.type.includes("简答")
+    
+    if (isTextType) {
+      const blankCount = getBlankCount(question.value.title)
+      
+      if (blankCount > 1) {
+        // 多个填空：聚焦到第一个输入框
+        const firstInput = blankInputRefs.value[0]
+        if (firstInput) {
+          firstInput.focus()
+        }
+      } else {
+        // 单个填空：聚焦到textarea
+        const textarea = document.querySelector('textarea') as HTMLTextAreaElement
+        if (textarea && !revealed.value[currentIdx.value]) {
+          textarea.focus()
+        }
+      }
+    }
+  })
 }
 
 const toggleReveal = () => {
@@ -977,6 +1092,8 @@ const handleKey = (e: KeyboardEvent) => {
 
 onMounted(() => {
   window.addEventListener('keydown', handleKey)
+  // 初始化时自动聚焦到输入框
+  autoFocusInput()
 })
 
 onUnmounted(() => {
