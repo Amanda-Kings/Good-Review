@@ -27,6 +27,9 @@ export const translations = {
         blurLight: "Light",
         blurStrong: "Strong",
         blurIntensity: "Intensity",
+        smartBlur: "Smart Blur",
+        smartBlurDesc: "Blur decreases as you answer correctly",
+        smartBlurProgress: "Smart Blur Progress",
         aiSettings: "AI Settings",
         configureAI: "Configure AI",
         fileSizeError: "Image file size cannot exceed 10MB",
@@ -58,7 +61,11 @@ export const translations = {
         desc: "You need a userscript manager like Tampermonkey installed.",
         copy: "Copy Code",
         copied: "Copied!",
-        tip: "Create new script & paste code."
+        tip: "Create new script & paste code.",
+        copyFormat: "Copy Format",
+        formatCopied: "Copied!",
+        scriptDesc: "Copy userscript code",
+        formatDesc: "Copy question JSON format"
       },
       step2: {
         title: "Extract Data",
@@ -151,6 +158,9 @@ export const translations = {
         blurLight: "轻微",
         blurStrong: "强烈",
         blurIntensity: "模糊强度",
+        smartBlur: "小巧思",
+        smartBlurDesc: "答对题目越多，模糊度越低",
+        smartBlurProgress: "小巧思进度",
         aiSettings: "AI设置",
         configureAI: "配置AI",
         fileSizeError: "图片文件大小不能超过10MB",
@@ -182,7 +192,11 @@ export const translations = {
         desc: "请确保浏览器已安装 Tampermonkey (油猴) 插件。",
         copy: "复制脚本",
         copied: "已复制！",
-        tip: "新建脚本并粘贴代码。"
+        tip: "新建脚本并粘贴代码。",
+        copyFormat: "复制格式",
+        formatCopied: "已复制！",
+        scriptDesc: "复制用户脚本代码",
+        formatDesc: "复制题目JSON格式"
       },
       step2: {
         title: "提取数据",

@@ -1,0 +1,48 @@
+{
+  "source": "https://mooc1.chaoxing.com/mooc-ans/mooc2/work/view?courseId=254598688&classId=125773241&cpi=357258724&workId=49219572&answerId=54944796&enc=6041469bb1337fbfd8a5f63ac28cafca",
+  "ts": 1768064502786,
+  "items": [
+     {
+      "id": 1,
+      "type": "单选",
+      "title": "1、单片机与微型计算机的区别是：（ ）",
+      "options": [
+        { "label": "A", "text": "单片机的体积小，微型计算机的体积大" },
+        { "label": "B", "text": "单片机功能全，微型计算机功能不全" },
+        { "label": "C", "text": "单片机是将计算机各功能模块集成一块芯片上，微型计算机是将计算机的各功能模块放在不同的板上" },
+        { "label": "D", "text": "单片机价格低，微型计算机价格高" }
+      ],
+      "correctAnswer": [
+        "单片机是将计算机各功能模块集成一块芯片上，微型计算机是将计算机的各功能模块放在不同的板上"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 2,
+      "type": "判断",
+      "title": "20、AT89S51单片机中的同级中断不能嵌套。（ ）",
+      "options": [
+        { "label": "true", "text": "正确" },
+        { "label": "false", "text": "错误" }
+      ],
+      "correctAnswer": [
+        "正确"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 3,
+      "type": "填空",
+      "title": "银行家算法中，当一个进程提出的资源请求将导致系统从 状态进入 状态时，系统就拒绝它的资源请求。",
+      "options": [],
+      "correctAnswer": [
+        "安全",
+        "不安全"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    }
+  ]
+}

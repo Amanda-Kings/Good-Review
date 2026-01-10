@@ -38,18 +38,41 @@
                       // @name Chaoxing...<br/>
                       // @name         Chaoxing Work Scraper<br/>
                       // @namespace    cx-work-scraper<br/>
-                      // @version      1.4.0<br/>
                       ...
                   </code>
               </div>
-              <button
-                @click="handleCopy"
-                class="w-full py-4 rounded-xl bg-emerald-600/90 hover:bg-emerald-600 text-white font-bold transition-all shadow-lg shadow-emerald-500/20 hover:shadow-emerald-500/40 flex items-center justify-center gap-2 active:scale-[0.98] backdrop-blur-sm"
-              >
-                <CheckCircle2 v-if="copied" :size="18" />
-                <Clipboard v-else :size="18" />
-                <span>{{ copied ? t('guide.step1.copied') : t('guide.step1.copy') }}</span>
-              </button>
+              
+              <!-- 两个按钮并排 -->
+              <div class="grid grid-cols-2 gap-3">
+                <button
+                  @click="handleCopyScript"
+                  class="py-4 rounded-xl bg-emerald-600/90 hover:bg-emerald-600 text-white font-bold transition-all shadow-lg shadow-emerald-500/20 hover:shadow-emerald-500/40 flex items-center justify-center gap-2 active:scale-[0.98] backdrop-blur-sm"
+                >
+                  <CheckCircle2 v-if="copiedScript" :size="18" />
+                  <Clipboard v-else :size="18" />
+                  <span>{{ copiedScript ? t('guide.step1.copied') : t('guide.step1.copy') }}</span>
+                </button>
+                
+                <button
+                  @click="handleCopyFormat"
+                  class="py-4 rounded-xl bg-green-600/90 hover:bg-green-600 text-white font-bold transition-all shadow-lg shadow-green-500/20 hover:shadow-green-500/40 flex items-center justify-center gap-2 active:scale-[0.98] backdrop-blur-sm"
+                >
+                  <CheckCircle2 v-if="copiedFormat" :size="18" />
+                  <FileText v-else :size="18" />
+                  <span>{{ copiedFormat ? t('guide.step1.formatCopied') : t('guide.step1.copyFormat') }}</span>
+                </button>
+              </div>
+              
+              <!-- 按钮说明 -->
+              <!-- <div class="grid grid-cols-2 gap-3 text-xs text-slate-500 font-medium">
+                <div class="text-center">
+                  <span>{{ t('guide.step1.scriptDesc') }}</span>
+                </div>
+                <div class="text-center">
+                  <span>{{ t('guide.step1.formatDesc') }}</span>
+                </div>
+              </div> -->
+              
               <div class="flex items-center justify-center gap-2 text-xs font-bold text-slate-400 uppercase tracking-wider">
                   <ArrowDownCircle :size="14" />
                   <span>{{ t('guide.step1.tip') }}</span>
@@ -62,7 +85,7 @@
       <div class="relative group">
         <div class="glass-panel rounded-[2rem] p-6 sm:p-8 h-full flex flex-col hover:bg-white/30 transition-all duration-300">
            <div class="flex items-center gap-4 mb-5">
-            <div class="w-12 h-12 rounded-2xl bg-white/50 flex items-center justify-center text-indigo-500 shadow-sm shrink-0 backdrop-blur-md">
+            <div class="w-12 h-12 rounded-2xl bg-white/50 flex items-center justify-center text-green-500 shadow-sm shrink-0 backdrop-blur-md">
                <Database :size="24" :stroke-width="2.5" />
             </div>
             <h2 class="text-xl sm:text-2xl font-bold text-slate-800">{{ t('guide.step2.title') }}</h2>
@@ -106,22 +129,123 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { Clipboard, CheckCircle2, Terminal, ArrowDownCircle, Database } from 'lucide-vue-next'
+import { Clipboard, CheckCircle2, Terminal, ArrowDownCircle, Database, FileText } from 'lucide-vue-next'
 import { FULL_USERSCRIPT } from '../constants/constants'
 import { useLanguage } from '../composables/useLanguage'
 
 const { t } = useLanguage()
-const copied = ref(false)
+const copiedScript = ref(false)
+const copiedFormat = ref(false)
 
-const handleCopy = async () => {
+// 直接定义formatJson内容，避免导入问题
+const formatJsonContent = {
+  "source": "https://mooc1.chaoxing.com/mooc-ans/mooc2/work/view?courseId=254598688&classId=125773241&cpi=357258724&workId=49219572&answerId=54944796&enc=6041469bb1337fbfd8a5f63ac28cafca",
+  "ts": 1768064502786,
+  "items": [
+     {
+      "id": 1,
+      "type": "单选",
+      "title": "1、单片机与微型计算机的区别是：（ ）",
+      "options": [
+        { "label": "A", "text": "单片机的体积小，微型计算机的体积大" },
+        { "label": "B", "text": "单片机功能全，微型计算机功能不全" },
+        { "label": "C", "text": "单片机是将计算机各功能模块集成一块芯片上，微型计算机是将计算机的各功能模块放在不同的板上" },
+        { "label": "D", "text": "单片机价格低，微型计算机价格高" }
+      ],
+      "correctAnswer": [
+        "单片机是将计算机各功能模块集成一块芯片上，微型计算机是将计算机的各功能模块放在不同的板上"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 2,
+      "type": "判断",
+      "title": "20、AT89S51单片机中的同级中断不能嵌套。（ ）",
+      "options": [
+        { "label": "true", "text": "正确" },
+        { "label": "false", "text": "错误" }
+      ],
+      "correctAnswer": [
+        "正确"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 3,
+      "type": "填空",
+      "title": "银行家算法中，当一个进程提出的资源请求将导致系统从 状态进入 状态时，系统就拒绝它的资源请求。",
+      "options": [],
+      "correctAnswer": [
+        "安全",
+        "不安全"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    }
+  ]
+}
+
+const handleCopyScript = async () => {
+  console.log('handleCopyScript called') // 调试信息
   try {
     await navigator.clipboard.writeText(FULL_USERSCRIPT)
-    copied.value = true
+    copiedScript.value = true
+    console.log('Script copied successfully') // 调试信息
     setTimeout(() => {
-      copied.value = false
+      copiedScript.value = false
     }, 2000)
   } catch (err) {
-    console.error('Failed to copy:', err)
+    console.error('Failed to copy script:', err)
+    // 降级方案：使用传统的复制方法
+    try {
+      const textArea = document.createElement('textarea')
+      textArea.value = FULL_USERSCRIPT
+      document.body.appendChild(textArea)
+      textArea.select()
+      document.execCommand('copy')
+      document.body.removeChild(textArea)
+      copiedScript.value = true
+      console.log('Script copied with fallback method') // 调试信息
+      setTimeout(() => {
+        copiedScript.value = false
+      }, 2000)
+    } catch (fallbackErr) {
+      console.error('Fallback copy also failed:', fallbackErr)
+    }
+  }
+}
+
+const handleCopyFormat = async () => {
+  console.log('handleCopyFormat called') // 调试信息
+  try {
+    const jsonString = JSON.stringify(formatJsonContent, null, 2)
+    await navigator.clipboard.writeText(jsonString)
+    copiedFormat.value = true
+    console.log('Format copied successfully') // 调试信息
+    setTimeout(() => {
+      copiedFormat.value = false
+    }, 2000)
+  } catch (err) {
+    console.error('Failed to copy format:', err)
+    // 降级方案：使用传统的复制方法
+    try {
+      const jsonString = JSON.stringify(formatJsonContent, null, 2)
+      const textArea = document.createElement('textarea')
+      textArea.value = jsonString
+      document.body.appendChild(textArea)
+      textArea.select()
+      document.execCommand('copy')
+      document.body.removeChild(textArea)
+      copiedFormat.value = true
+      console.log('Format copied with fallback method') // 调试信息
+      setTimeout(() => {
+        copiedFormat.value = false
+      }, 2000)
+    } catch (fallbackErr) {
+      console.error('Fallback copy also failed:', fallbackErr)
+    }
   }
 }
 </script>

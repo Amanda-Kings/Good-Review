@@ -191,7 +191,24 @@
                     <!-- Glass Blur Intensity Control -->
                     <div class="border-t border-slate-200 pt-3 mt-3">
                       <h3 class="text-sm font-bold mb-3 text-slate-800">{{ t('app.settings.glassBlur') }}</h3>
-                      <div class="space-y-2">
+                      
+                      <!-- 小巧思功能开关 -->
+                      <div v-if="backgroundImage" class="mb-4">
+                        <label class="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-100 cursor-pointer transition-all">
+                          <input
+                            type="checkbox"
+                            v-model="smartBlurEnabled"
+                            @change="handleSmartBlurToggle"
+                            class="w-4 h-4 text-purple-600 bg-gray-100 border-gray-300 rounded focus:ring-purple-500 focus:ring-2"
+                          />
+                          <div class="flex-1">
+                            <div class="text-sm font-medium text-slate-700">{{ t('app.settings.smartBlur') }}</div>
+                            <div class="text-xs text-slate-500">{{ t('app.settings.smartBlurDesc') }}</div>
+                          </div>
+                        </label>
+                      </div>
+                      
+                      <div v-if="!smartBlurEnabled || !backgroundImage" class="space-y-2">
                         <div class="flex items-center justify-between text-xs text-slate-600">
                           <span>{{ t('app.settings.blurLight') }}</span>
                           <span>{{ t('app.settings.blurStrong') }}</span>
@@ -202,10 +219,31 @@
                           max="100"
                           :value="glassBlurIntensity"
                           @input="handleBlurChange"
-                          class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer slider"
+                          :disabled="!!(smartBlurEnabled && backgroundImage)"
+                          class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer slider disabled:opacity-50 disabled:cursor-not-allowed"
                         />
                         <div class="text-xs text-slate-500 text-center">
                           {{ t('app.settings.blurIntensity') }}: {{ glassBlurIntensity }}%
+                        </div>
+                      </div>
+                      
+                      <!-- 小巧思模式下的进度显示 -->
+                      <div v-if="smartBlurEnabled && backgroundImage && quizTotalCount > 0" class="space-y-2">
+                        <div class="text-xs text-slate-600 text-center">
+                          {{ t('app.settings.smartBlurProgress') }}
+                        </div>
+                        <div class="flex items-center justify-between text-xs text-slate-600">
+                          <span>{{ t('app.settings.blurStrong') }}</span>
+                          <span>{{ t('app.settings.blurLight') }}</span>
+                        </div>
+                        <div class="w-full h-2 bg-slate-200 rounded-lg overflow-hidden">
+                          <div 
+                            class="h-full bg-gradient-to-r from-purple-500 to-purple-600 transition-all duration-500"
+                            :style="{ width: `${(quizCorrectCount / quizTotalCount) * 100}%` }"
+                          />
+                        </div>
+                        <div class="text-xs text-slate-500 text-center">
+                          已答对: {{ quizCorrectCount }}/{{ quizTotalCount }} 题 (模糊度: {{ Math.round(computedBlurValue) }}px)
                         </div>
                       </div>
                     </div>
@@ -382,7 +420,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref, onMounted, onUnmounted } from 'vue'
+import { computed, ref, onMounted, onUnmounted, provide } from 'vue'
 import { useRoute } from 'vue-router'
 import { Layout, Import, BookMarked, Sparkles, Languages, Github, X, Settings, RotateCcw, ImageIcon, Trash2, Bot } from 'lucide-vue-next'
 import { provideLanguage } from './composables/useLanguage'
@@ -417,6 +455,11 @@ const backgroundImage = ref<string | null>(null)
 // 毛玻璃模糊程度状态 (0-100)
 const glassBlurIntensity = ref<number>(50)
 
+// 小巧思功能状态
+const smartBlurEnabled = ref<boolean>(false)
+const quizCorrectCount = ref<number>(0)
+const quizTotalCount = ref<number>(0)
+
 // AI配置状态
 const aiConfig = ref({
   platform: 'siliconflow',
@@ -439,10 +482,26 @@ const fileInput = ref<HTMLInputElement | null>(null)
 
 // 计算模糊值
 const computedBlurValue = computed(() => {
-  // 将0-100的值映射到4px-40px的模糊范围
   const minBlur = 4
   const maxBlur = 40
-  return minBlur + (glassBlurIntensity.value / 100) * (maxBlur - minBlur)
+  
+  if (smartBlurEnabled.value && backgroundImage.value) {
+    // 小巧思模式：每答对一题就减少模糊度
+    if (quizCorrectCount.value === 0 || quizTotalCount.value === 0) {
+      // 还没答对任何题或没有题目，使用最大模糊度
+      return maxBlur
+    }
+    
+    // 根据当前题目总数计算每题的模糊度减少量
+    const blurReductionPerCorrect = (maxBlur - minBlur) / quizTotalCount.value
+    const currentBlur = maxBlur - (quizCorrectCount.value * blurReductionPerCorrect)
+    
+    // 确保模糊度不会低于最小值
+    return Math.max(currentBlur, minBlur)
+  } else {
+    // 普通模式：使用用户设置的模糊度
+    return minBlur + (glassBlurIntensity.value / 100) * (maxBlur - minBlur)
+  }
 })
 
 // 切换语言
@@ -545,6 +604,35 @@ const handleBlurChange = (event: Event) => {
   updateGlassBlur()
 }
 
+// 处理小巧思功能开关
+const handleSmartBlurToggle = () => {
+  localStorage.setItem('smart-blur-enabled', smartBlurEnabled.value.toString())
+  if (smartBlurEnabled.value) {
+    // 启用小巧思时，重置答题统计
+    quizCorrectCount.value = 0
+    quizTotalCount.value = 0
+  }
+  updateGlassBlur()
+}
+
+// 更新答题统计（供其他组件调用）
+const updateQuizStats = (correct: number, total: number) => {
+  quizCorrectCount.value = correct
+  quizTotalCount.value = total
+  updateGlassBlur()
+}
+
+// 重置答题统计
+const resetQuizStats = () => {
+  quizCorrectCount.value = 0
+  quizTotalCount.value = 0
+  updateGlassBlur()
+}
+
+// 提供给子组件使用
+provide('updateQuizStats', updateQuizStats)
+provide('resetQuizStats', resetQuizStats)
+
 // 更新CSS变量
 const updateGlassBlur = () => {
   document.documentElement.style.setProperty('--glass-blur', `${computedBlurValue.value}px`)
@@ -619,6 +707,13 @@ onMounted(() => {
     console.log('Glass blur intensity loaded from localStorage:', savedBlur)
   }
   
+  // 加载小巧思设置
+  const savedSmartBlur = localStorage.getItem('smart-blur-enabled')
+  if (savedSmartBlur) {
+    smartBlurEnabled.value = savedSmartBlur === 'true'
+    console.log('Smart blur enabled loaded from localStorage:', savedSmartBlur)
+  }
+  
   // 加载AI配置
   loadAIConfig()
   
@@ -641,6 +736,13 @@ onMounted(() => {
       console.log('localStorage glass-blur-intensity changed:', e.newValue)
       if (e.newValue) {
         glassBlurIntensity.value = parseInt(e.newValue)
+        updateGlassBlur()
+      }
+    }
+    if (e.key === 'smart-blur-enabled') {
+      console.log('localStorage smart-blur-enabled changed:', e.newValue)
+      if (e.newValue) {
+        smartBlurEnabled.value = e.newValue === 'true'
         updateGlassBlur()
       }
     }

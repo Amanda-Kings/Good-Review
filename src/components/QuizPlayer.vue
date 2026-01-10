@@ -351,7 +351,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted, onUnmounted, h, nextTick } from 'vue'
+import { ref, computed, onMounted, onUnmounted, h, nextTick, inject } from 'vue'
 import { ArrowLeft, CheckCircle, XCircle, ChevronLeft, ChevronRight, Eye, EyeOff, RotateCcw, LayoutDashboard, Trophy, CheckSquare, X, Copy, Bot } from 'lucide-vue-next'
 import type { QuestionBank, QuestionItem } from '../types/types'
 import { useLanguage } from '../composables/useLanguage'
@@ -369,6 +369,10 @@ const emit = defineEmits<{
 }>()
 
 const { t } = useLanguage()
+
+// Inject quiz stats functions from App.vue
+const updateQuizStats = inject<(correct: number, total: number) => void>('updateQuizStats')
+const resetQuizStats = inject<() => void>('resetQuizStats')
 
 // State
 const questions = ref<QuestionItem[]>(props.initialQuestions || props.bank.questions)
@@ -511,11 +515,12 @@ const checkAnswer = (q: QuestionItem, userAns: string[]) => {
         const userNorm = normalizeText(userAns[i])
         const correctNorm = normalizeText(correct[i])
         
-        // 如果完全匹配，认为正确
+        // 精确匹配
         if (userNorm === correctNorm) continue
         
-        // 如果用户答案包含正确答案或正确答案包含用户答案，也认为正确
-        if (userNorm.includes(correctNorm) || correctNorm.includes(userNorm)) continue
+        // 只有当用户答案比正确答案长，且包含正确答案时才认为正确
+        // 这样可以处理用户输入了更完整答案的情况，但不允许部分匹配
+        if (userNorm.length > correctNorm.length && userNorm.includes(correctNorm)) continue
         
         return false
       }
@@ -527,10 +532,10 @@ const checkAnswer = (q: QuestionItem, userAns: string[]) => {
       
       return correct.some(c => {
         const correctNorm = normalizeText(c)
-        // 完全匹配
+        // 精确匹配
         if (userNorm === correctNorm) return true
-        // 包含关系匹配
-        if (userNorm.includes(correctNorm) || correctNorm.includes(userNorm)) return true
+        // 只允许用户答案更完整的情况
+        if (userNorm.length > correctNorm.length && userNorm.includes(correctNorm)) return true
         return false
       })
     }
@@ -894,9 +899,36 @@ const handleBlankChange = (index: number, e: Event) => {
 }
 
 const getBlankCount = (title: string) => {
-  // 计算题目中括号的数量，每个括号代表一个空格
-  const matches = title.match(/[（(]\s*[）)]/g)
-  return matches ? matches.length : 1
+  // 计算题目中填空的数量，支持多种格式：
+  // 1. 括号格式：（ ）、( )
+  // 2. 下划线格式：______、________
+  // 3. 单个空格格式：被中文字符包围的单个空格
+  
+  let count = 0
+  
+  // 检测括号格式
+  const bracketMatches = title.match(/[（(]\s*[）)]/g)
+  if (bracketMatches) {
+    count += bracketMatches.length
+  }
+  
+  // 检测下划线格式（连续4个或以上下划线）
+  const underlineMatches = title.match(/_{4,}/g)
+  if (underlineMatches) {
+    count += underlineMatches.length
+  }
+  
+  // 检测单个空格格式：被中文字符包围的单个空格
+  // 先移除括号内的空格，然后检测被中文字符包围的单个空格
+  let titleWithoutBrackets = title.replace(/[（(]\s*[）)]/g, '')
+  // 匹配：中文字符 + 空格 + 中文字符
+  const chineseSpaceMatches = titleWithoutBrackets.match(/[\u4e00-\u9fff]\s[\u4e00-\u9fff]/g)
+  if (chineseSpaceMatches) {
+    count += chineseSpaceMatches.length
+  }
+  
+  // 如果没有检测到任何填空格式，默认返回1
+  return count > 0 ? count : 1
 }
 
 const isBlankCorrect = (index: number) => {
@@ -909,10 +941,12 @@ const isBlankCorrect = (index: number) => {
   const userNorm = normalizeText(userAns[index])
   const correctNorm = normalizeText(correctAns[index])
   
-  // 完全匹配或包含关系匹配
-  return userNorm === correctNorm || 
-         userNorm.includes(correctNorm) || 
-         correctNorm.includes(userNorm)
+  // 精确匹配
+  if (userNorm === correctNorm) return true
+  // 只允许用户答案更完整的情况
+  if (userNorm.length > correctNorm.length && userNorm.includes(correctNorm)) return true
+  
+  return false
 }
 
 const hasValidAnswers = () => {
@@ -941,6 +975,39 @@ const handleTextKeyDown = (e: KeyboardEvent) => {
 
 const setRevealed = (idx: number, value: boolean) => {
   revealed.value[idx] = value
+  
+  // 如果是显示答案，立即更新统计
+  if (value && updateQuizStats) {
+    updateQuizStatsImmediate()
+  }
+}
+
+// 立即更新统计的函数
+const updateQuizStatsImmediate = () => {
+  let correct = 0
+  
+  // 遍历所有已显示答案的题目
+  Object.keys(revealed.value).forEach(idxStr => {
+    const idx = parseInt(idxStr)
+    if (idx < questions.value.length && revealed.value[idx]) {
+      const q = questions.value[idx]
+      const userAns = userAnswers.value[idx] || []
+      const wasAnsweredFirst = answeredBeforeReveal.value[idx] || false
+      
+      // 如果用户在查看答案前就回答了，按正常逻辑判断
+      if (wasAnsweredFirst) {
+        const res = checkAnswer(q, userAns)
+        if (res === true) correct++
+      }
+      // 如果直接查看答案，不增加正确数
+    }
+  })
+  
+  // 更新全局统计（用于Smart Blur功能）
+  // 传递正确数和当前题目总数
+  if (updateQuizStats) {
+    updateQuizStats(correct, questions.value.length)
+  }
 }
 
 const nextQuestion = () => {
@@ -1022,6 +1089,11 @@ const handleRetryMistakes = () => {
     revealed.value = {}
     answeredBeforeReveal.value = {}
     isFinished.value = false
+    
+    // 重置答题统计，设置新的题目总数
+    if (updateQuizStats) {
+      updateQuizStats(0, wrongQuestions.length)
+    }
   }
 }
 
@@ -1094,9 +1166,17 @@ onMounted(() => {
   window.addEventListener('keydown', handleKey)
   // 初始化时自动聚焦到输入框
   autoFocusInput()
+  // 初始化答题统计，设置题目总数
+  if (updateQuizStats) {
+    updateQuizStats(0, questions.value.length)
+  }
 })
 
 onUnmounted(() => {
   window.removeEventListener('keydown', handleKey)
+  // 组件卸载时重置答题统计
+  if (resetQuizStats) {
+    resetQuizStats()
+  }
 })
 </script>

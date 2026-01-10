@@ -124,7 +124,7 @@
     "title": "在分时和批处理系统结合的操作系统中引入“前台”和“后台”的概念，其目的是（ ）。",
     "options": [],
     "correctAnswer": [
-      "为了提高 CPU 利用率"
+      "提高CPU的利用率"
     ],
     "selectedAnswer": [],
     "images": []
@@ -186,8 +186,8 @@
     "correctAnswer": [
       "程序段",
       "数据段",
-      "进程控制块（PCB）",
-      "进程控制块（PCB）"
+      "PCB",
+      "PCB"
     ],
     "selectedAnswer": [],
     "images": []
@@ -260,7 +260,7 @@
     "options": [],
     "correctAnswer": [
       "资源",
-      "进程控制块（PCB）"
+      "PCB"
     ],
     "selectedAnswer": [],
     "images": []
@@ -333,7 +333,7 @@
     "options": [],
     "correctAnswer": [
       "可用资源的数目",
-      "因请求该资源而被阻塞的进程的数目"
+      "因请求该资源而被阻塞的进程数目"
     ],
     "selectedAnswer": [],
     "images": []
@@ -881,8 +881,8 @@
     "options": [],
     "correctAnswer": [
       "临界区",
-      "P 操作",
-      "V 操作"
+      "P操作",
+      "V操作"
     ],
     "selectedAnswer": [],
     "images": []
@@ -893,7 +893,7 @@
     "title": "在 UNIX 系统中，所有的（ ）都被看成是特殊文件，它们在使用形式上与普通文件相同，但它们使用是和（ ）紧密相连的。",
     "options": [],
     "correctAnswer": [
-      "I/O 设备",
+      "I/O设备",
       "设备管理程序"
     ],
     "selectedAnswer": [],
