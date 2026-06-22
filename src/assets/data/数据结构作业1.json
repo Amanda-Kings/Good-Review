@@ -1,0 +1,2236 @@
+[
+    {
+      "id": 1,
+      "type": "判断",
+      "title": "任何二叉搜索树中同一层的结点从左到右是有序的（从小到大）。",
+      "options": [
+        {
+          "label": "true",
+          "text": "正确"
+        },
+        {
+          "label": "false",
+          "text": "错误"
+        }
+      ],
+      "correctAnswer": [
+        "正确"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 2,
+      "type": "判断",
+      "title": "二叉搜索树的查找和折半查找的时间复杂度相同。",
+      "options": [
+        {
+          "label": "true",
+          "text": "正确"
+        },
+        {
+          "label": "false",
+          "text": "错误"
+        }
+      ],
+      "correctAnswer": [
+        "错误"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 3,
+      "type": "判断",
+      "title": "二叉排序树的后序遍历序列必然是递增的。",
+      "options": [
+        {
+          "label": "true",
+          "text": "正确"
+        },
+        {
+          "label": "false",
+          "text": "错误"
+        }
+      ],
+      "correctAnswer": [
+        "错误"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 4,
+      "type": "判断",
+      "title": "若一搜索树（查找树）是一个有n个结点的完全二叉树，则该树的最大值一定在叶结点上",
+      "options": [
+        {
+          "label": "true",
+          "text": "正确"
+        },
+        {
+          "label": "false",
+          "text": "错误"
+        }
+      ],
+      "correctAnswer": [
+        "错误"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 5,
+      "type": "判断",
+      "title": "N个结点的二叉排序树有多种，其中树高最小的二叉排序树是最佳的。",
+      "options": [
+        {
+          "label": "true",
+          "text": "正确"
+        },
+        {
+          "label": "false",
+          "text": "错误"
+        }
+      ],
+      "correctAnswer": [
+        "正确"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 6,
+      "type": "判断",
+      "title": "中根遍历二叉查找树所得序列一定是有序序列。",
+      "options": [
+        {
+          "label": "true",
+          "text": "正确"
+        },
+        {
+          "label": "false",
+          "text": "错误"
+        }
+      ],
+      "correctAnswer": [
+        "正确"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 7,
+      "type": "判断",
+      "title": "在二叉排序树中，每个结点的关键字都比左孩子关键字大，比右孩子关键字小。",
+      "options": [
+        {
+          "label": "true",
+          "text": "正确"
+        },
+        {
+          "label": "false",
+          "text": "错误"
+        }
+      ],
+      "correctAnswer": [
+        "正确"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 8,
+      "type": "判断",
+      "title": "二叉排序树的查找效率和二叉排序树的髙度有关。",
+      "options": [
+        {
+          "label": "true",
+          "text": "正确"
+        },
+        {
+          "label": "false",
+          "text": "错误"
+        }
+      ],
+      "correctAnswer": [
+        "正确"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 9,
+      "type": "判断",
+      "title": "无向连通图所有顶点的度之和为偶数。",
+      "options": [
+        {
+          "label": "true",
+          "text": "正确"
+        },
+        {
+          "label": "false",
+          "text": "错误"
+        }
+      ],
+      "correctAnswer": [
+        "正确"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 10,
+      "type": "判断",
+      "title": "用邻接表法存储图，占用的存储空间数只与图中结点个数有关，而与边数无关。",
+      "options": [
+        {
+          "label": "true",
+          "text": "正确"
+        },
+        {
+          "label": "false",
+          "text": "错误"
+        }
+      ],
+      "correctAnswer": [
+        "错误"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 11,
+      "type": "判断",
+      "title": "用邻接矩阵法存储图，占用的存储空间数只与图中结点个数有关，而与边数无关。",
+      "options": [
+        {
+          "label": "true",
+          "text": "正确"
+        },
+        {
+          "label": "false",
+          "text": "错误"
+        }
+      ],
+      "correctAnswer": [
+        "正确"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 12,
+      "type": "判断",
+      "title": "在一个有向图中，所有顶点的入度与出度之和等于所有边之和的2倍。",
+      "options": [
+        {
+          "label": "true",
+          "text": "正确"
+        },
+        {
+          "label": "false",
+          "text": "错误"
+        }
+      ],
+      "correctAnswer": [
+        "正确"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 13,
+      "type": "判断",
+      "title": "在任一有向图中，所有顶点的入度之和等于所有顶点的出度之和。",
+      "options": [
+        {
+          "label": "true",
+          "text": "正确"
+        },
+        {
+          "label": "false",
+          "text": "错误"
+        }
+      ],
+      "correctAnswer": [
+        "正确"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 14,
+      "type": "判断",
+      "title": "采用邻接表存储的图，其广度优先遍历类似于二叉树的先序遍历。",
+      "options": [
+        {
+          "label": "true",
+          "text": "正确"
+        },
+        {
+          "label": "false",
+          "text": "错误"
+        }
+      ],
+      "correctAnswer": [
+        "错误"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 15,
+      "type": "判断",
+      "title": "广度优先搜索遍历图的时间复杂度和深度优先探索遍历相同。",
+      "options": [
+        {
+          "label": "true",
+          "text": "正确"
+        },
+        {
+          "label": "false",
+          "text": "错误"
+        }
+      ],
+      "correctAnswer": [
+        "正确"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 16,
+      "type": "判断",
+      "title": "在一个有权无向图中，若`b`到`a`的最短路径距离是12，且`c`到`b`之间存在一条权为2的边，则`c`到`a`的最短路径距离一定不小于10。",
+      "options": [
+        {
+          "label": "true",
+          "text": "正确"
+        },
+        {
+          "label": "false",
+          "text": "错误"
+        }
+      ],
+      "correctAnswer": [
+        "正确"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 17,
+      "type": "判断",
+      "title": "P 是顶点 S 到 T 的最短路径，如果该图中的所有路径的权值都加 1，P 仍然是 S 到 T 的最短路径。",
+      "options": [
+        {
+          "label": "true",
+          "text": "正确"
+        },
+        {
+          "label": "false",
+          "text": "错误"
+        }
+      ],
+      "correctAnswer": [
+        "错误"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 18,
+      "type": "判断",
+      "title": "在图中，可以利用求得的最小生成树来确定两个结点之间的最短路径。",
+      "options": [
+        {
+          "label": "true",
+          "text": "正确"
+        },
+        {
+          "label": "false",
+          "text": "错误"
+        }
+      ],
+      "correctAnswer": [
+        "错误"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 19,
+      "type": "判断",
+      "title": "Kruskal 算法是维护一个森林，每一步把两棵树合并成一棵。",
+      "options": [
+        {
+          "label": "true",
+          "text": "正确"
+        },
+        {
+          "label": "false",
+          "text": "错误"
+        }
+      ],
+      "correctAnswer": [
+        "正确"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 20,
+      "type": "判断",
+      "title": "Kruskal 算法是通过每步添加一条边及其相连的顶点到一棵树，从而逐步生成最小生成树。",
+      "options": [
+        {
+          "label": "true",
+          "text": "正确"
+        },
+        {
+          "label": "false",
+          "text": "错误"
+        }
+      ],
+      "correctAnswer": [
+        "错误"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 21,
+      "type": "判断",
+      "title": "Prim 算法是通过每步添加一条边及其相连的顶点到一棵树，从而逐步生成最小生成树。",
+      "options": [
+        {
+          "label": "true",
+          "text": "正确"
+        },
+        {
+          "label": "false",
+          "text": "错误"
+        }
+      ],
+      "correctAnswer": [
+        "正确"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 22,
+      "type": "判断",
+      "title": "不同的求最小生成树的方法最后得到的生成树是相同的。",
+      "options": [
+        {
+          "label": "true",
+          "text": "正确"
+        },
+        {
+          "label": "false",
+          "text": "错误"
+        }
+      ],
+      "correctAnswer": [
+        "错误"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 23,
+      "type": "判断",
+      "title": "带权无向图的最小生成树必是唯一的。",
+      "options": [
+        {
+          "label": "true",
+          "text": "正确"
+        },
+        {
+          "label": "false",
+          "text": "错误"
+        }
+      ],
+      "correctAnswer": [
+        "错误"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 24,
+      "type": "判断",
+      "title": "插入排序算法在每一趟都能选取出一个元素放在其最终的位置上。",
+      "options": [
+        {
+          "label": "true",
+          "text": "正确"
+        },
+        {
+          "label": "false",
+          "text": "错误"
+        }
+      ],
+      "correctAnswer": [
+        "错误"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 25,
+      "type": "判断",
+      "title": "排序算法中的比较次数与初始元素序列的排列无关。",
+      "options": [
+        {
+          "label": "true",
+          "text": "正确"
+        },
+        {
+          "label": "false",
+          "text": "错误"
+        }
+      ],
+      "correctAnswer": [
+        "错误"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 26,
+      "type": "判断",
+      "title": "在冒泡排序算法中，每一趟排序都能确定一个元素的最终位置",
+      "options": [
+        {
+          "label": "true",
+          "text": "正确"
+        },
+        {
+          "label": "false",
+          "text": "错误"
+        }
+      ],
+      "correctAnswer": [
+        "正确"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 27,
+      "type": "判断",
+      "title": "堆是完全二叉树，完全二叉树不一定是堆。（  ）",
+      "options": [
+        {
+          "label": "true",
+          "text": "正确"
+        },
+        {
+          "label": "false",
+          "text": "错误"
+        }
+      ],
+      "correctAnswer": [
+        "正确"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 28,
+      "type": "判断",
+      "title": "堆排序是稳定的。",
+      "options": [
+        {
+          "label": "true",
+          "text": "正确"
+        },
+        {
+          "label": "false",
+          "text": "错误"
+        }
+      ],
+      "correctAnswer": [
+        "错误"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 29,
+      "type": "判断",
+      "title": "合并排序算法是稳定的排序方法。",
+      "options": [
+        {
+          "label": "true",
+          "text": "正确"
+        },
+        {
+          "label": "false",
+          "text": "错误"
+        }
+      ],
+      "correctAnswer": [
+        "正确"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 30,
+      "type": "判断",
+      "title": "在任何情况下，归并排序都比简单插入排序快。",
+      "options": [
+        {
+          "label": "true",
+          "text": "正确"
+        },
+        {
+          "label": "false",
+          "text": "错误"
+        }
+      ],
+      "correctAnswer": [
+        "错误"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 31,
+      "type": "判断",
+      "title": "希尔排序是稳定的算法。",
+      "options": [
+        {
+          "label": "true",
+          "text": "正确"
+        },
+        {
+          "label": "false",
+          "text": "错误"
+        }
+      ],
+      "correctAnswer": [
+        "错误"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 32,
+      "type": "判断",
+      "title": "由于希尔排序的最后一趟与直接插入排序过程相同，因此前者一定比后者花费的时间更多。",
+      "options": [
+        {
+          "label": "true",
+          "text": "正确"
+        },
+        {
+          "label": "false",
+          "text": "错误"
+        }
+      ],
+      "correctAnswer": [
+        "错误"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 33,
+      "type": "判断",
+      "title": "直接插入排序是不稳定的排序方法。",
+      "options": [
+        {
+          "label": "true",
+          "text": "正确"
+        },
+        {
+          "label": "false",
+          "text": "错误"
+        }
+      ],
+      "correctAnswer": [
+        "错误"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 34,
+      "type": "判断",
+      "title": "直接选择排序算法在最好情况下的时间复杂度为O（N）。",
+      "options": [
+        {
+          "label": "true",
+          "text": "正确"
+        },
+        {
+          "label": "false",
+          "text": "错误"
+        }
+      ],
+      "correctAnswer": [
+        "错误"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 35,
+      "type": "判断",
+      "title": "选择排序是稳定的。",
+      "options": [
+        {
+          "label": "true",
+          "text": "正确"
+        },
+        {
+          "label": "false",
+          "text": "错误"
+        }
+      ],
+      "correctAnswer": [
+        "错误"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 36,
+      "type": "判断",
+      "title": "冒泡排序是稳定的。",
+      "options": [
+        {
+          "label": "true",
+          "text": "正确"
+        },
+        {
+          "label": "false",
+          "text": "错误"
+        }
+      ],
+      "correctAnswer": [
+        "正确"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 37,
+      "type": "判断",
+      "title": "对N个不同的数据采用冒泡排序进行从大到小的排序，当元素基本有序时交换元素次数肯定最多。",
+      "options": [
+        {
+          "label": "true",
+          "text": "正确"
+        },
+        {
+          "label": "false",
+          "text": "错误"
+        }
+      ],
+      "correctAnswer": [
+        "错误"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 38,
+      "type": "判断",
+      "title": "快速排序是稳定的算法。",
+      "options": [
+        {
+          "label": "true",
+          "text": "正确"
+        },
+        {
+          "label": "false",
+          "text": "错误"
+        }
+      ],
+      "correctAnswer": [
+        "错误"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 39,
+      "type": "单选",
+      "title": "对二叉搜索树进行什么遍历可以得到从小到大的排序序列？",
+      "options": [
+        {
+          "label": "A",
+          "text": "前序遍历"
+        },
+        {
+          "label": "B",
+          "text": "后序遍历"
+        },
+        {
+          "label": "C",
+          "text": "中序遍历"
+        },
+        {
+          "label": "D",
+          "text": "层次遍历"
+        }
+      ],
+      "correctAnswer": [
+        "中序遍历"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 40,
+      "type": "单选",
+      "title": "若二叉搜索树是有$$N$$个结点的完全二叉树，则不正确的说法是：",
+      "options": [
+        {
+          "label": "A",
+          "text": "平均查找效率是$$O(logN)$$"
+        },
+        {
+          "label": "B",
+          "text": "最大值一定在最后一层"
+        },
+        {
+          "label": "C",
+          "text": "最小值一定在叶结点上"
+        },
+        {
+          "label": "D",
+          "text": "中位值结点在根结点或根的左子树上"
+        }
+      ],
+      "correctAnswer": [
+        "最大值一定在最后一层"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 41,
+      "type": "单选",
+      "title": "若一棵二叉树的前序遍历序列是{ 4, 2, 1, 3, 6, 5, 7 }，中序遍历序列是{ 1, 2, 3, 4, 5, 6, 7 }，则下列哪句是错的？",
+      "options": [
+        {
+          "label": "A",
+          "text": "这是一棵完全二叉树"
+        },
+        {
+          "label": "B",
+          "text": "所有的奇数都在叶子结点上"
+        },
+        {
+          "label": "C",
+          "text": "这是一棵二叉搜索树"
+        },
+        {
+          "label": "D",
+          "text": "2是5的父结点"
+        }
+      ],
+      "correctAnswer": [
+        "2是5的父结点"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 42,
+      "type": "单选",
+      "title": "将{ 6, 9, 12, 3, 4, 8 }依次插入初始为空的二叉搜索树。则该树的后序遍历结果是：",
+      "options": [
+        {
+          "label": "A",
+          "text": "4, 3, 6, 8, 12, 9"
+        },
+        {
+          "label": "B",
+          "text": "3, 4, 9, 8, 12, 6"
+        },
+        {
+          "label": "C",
+          "text": "3, 4, 6, 8, 12, 9"
+        },
+        {
+          "label": "D",
+          "text": "4, 3, 8, 12, 9, 6"
+        }
+      ],
+      "correctAnswer": [
+        "4, 3, 8, 12, 9, 6"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 43,
+      "type": "单选",
+      "title": "将{ 32, 2, 15, 65, 28, 10 }依次插入初始为空的二叉搜索树。则该树的前序遍历结果是：",
+      "options": [
+        {
+          "label": "A",
+          "text": "2, 10, 15, 28, 32, 65"
+        },
+        {
+          "label": "B",
+          "text": "32, 2, 10, 15, 28, 65"
+        },
+        {
+          "label": "C",
+          "text": "10, 28, 15, 2, 65, 32"
+        },
+        {
+          "label": "D",
+          "text": "32, 2, 15, 10, 28, 65"
+        }
+      ],
+      "correctAnswer": [
+        "32, 2, 15, 10, 28, 65"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 44,
+      "type": "单选",
+      "title": "将{ 32, 2, 15, 65, 28, 10 }依次插入初始为空的二叉排序树，则该树的后序遍历结果是。",
+      "options": [
+        {
+          "label": "A",
+          "text": "2, 10, 15, 28, 32, 65"
+        },
+        {
+          "label": "B",
+          "text": "32, 2, 10, 15, 28, 65"
+        },
+        {
+          "label": "C",
+          "text": "10, 28, 15, 2, 65, 32"
+        },
+        {
+          "label": "D",
+          "text": "32, 2, 15, 10, 28, 65"
+        }
+      ],
+      "correctAnswer": [
+        "10, 28, 15, 2, 65, 32"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 45,
+      "type": "单选",
+      "title": "将{ 32, 2, 15, 65, 28, 10 }依次插入初始为空的二叉排序树，则该树的前序遍历结果是。",
+      "options": [
+        {
+          "label": "A",
+          "text": "2, 10, 15, 28, 32, 65"
+        },
+        {
+          "label": "B",
+          "text": "32, 2, 10, 15, 28, 65"
+        },
+        {
+          "label": "C",
+          "text": "10, 28, 15, 2, 65, 32"
+        },
+        {
+          "label": "D",
+          "text": "32, 2, 15, 10, 28, 65"
+        }
+      ],
+      "correctAnswer": [
+        "32, 2, 15, 10, 28, 65"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 46,
+      "type": "单选",
+      "title": "已知由（60,30,56,78,12,45）序列构成的二叉排序树，其不成功查找的平均查找长度为（ ）。",
+      "options": [
+        {
+          "label": "A",
+          "text": "21/7"
+        },
+        {
+          "label": "B",
+          "text": "28/7"
+        },
+        {
+          "label": "C",
+          "text": "15/6"
+        },
+        {
+          "label": "D",
+          "text": "21/6"
+        }
+      ],
+      "correctAnswer": [
+        "21/7"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 47,
+      "type": "单选",
+      "title": "已知一棵由1、2、3、4、5、6、7共7个结点组成的二叉搜索树（查找树），其结构如图所示，问：根结点是什么？",
+      "options": [
+        {
+          "label": "A",
+          "text": "1"
+        },
+        {
+          "label": "B",
+          "text": "4"
+        },
+        {
+          "label": "C",
+          "text": "5"
+        },
+        {
+          "label": "D",
+          "text": "不能确定"
+        }
+      ],
+      "correctAnswer": [
+        "4"
+      ],
+      "selectedAnswer": [],
+      "images": [
+        "https://images.ptausercontent.com/33238e6c-deab-46df-9ca1-8a6336d4da51.png"
+      ]
+    },
+    {
+      "id": 48,
+      "type": "单选",
+      "title": "算法：下列关于大根堆（至少含2个元素）的叙述中，正确的是\nI.可以将堆看成是一棵完全二叉树 \nII. 可以采用顺序存储方式保存堆\nIII.可以将堆看成是一棵二叉排序树\nIV. 堆中的次大值一定在根的下一层",
+      "options": [
+        {
+          "label": "A",
+          "text": "仅I、II"
+        },
+        {
+          "label": "B",
+          "text": "仅II、III"
+        },
+        {
+          "label": "C",
+          "text": "仅I、II和IV"
+        },
+        {
+          "label": "D",
+          "text": "仅I、III和IV"
+        }
+      ],
+      "correctAnswer": [
+        "仅I、II和IV"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 49,
+      "type": "单选",
+      "title": "在一个有向图中，所有顶点的入度与出度之和等于所有边之和的多少倍？",
+      "options": [
+        {
+          "label": "A",
+          "text": "1/2"
+        },
+        {
+          "label": "B",
+          "text": "1"
+        },
+        {
+          "label": "C",
+          "text": "2"
+        },
+        {
+          "label": "D",
+          "text": "4"
+        }
+      ],
+      "correctAnswer": [
+        "2"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 50,
+      "type": "单选",
+      "title": "对于给定的有向图如下，其逆邻接表为：",
+      "options": [
+        {
+          "label": "A",
+          "text": ""
+        },
+        {
+          "label": "B",
+          "text": ""
+        },
+        {
+          "label": "C",
+          "text": ""
+        },
+        {
+          "label": "D",
+          "text": ""
+        }
+      ],
+      "correctAnswer": [
+        ""
+      ],
+      "selectedAnswer": [],
+      "images": [
+        "https://images.ptausercontent.com/c1a5c52a-448f-46bb-9c61-5688b7d306b8.JPG",
+        "https://images.ptausercontent.com/a64046f3-222c-4958-8600-e2d020453271.JPG",
+        "https://images.ptausercontent.com/7947c101-35e9-4ceb-9a51-9673c1bf196f.JPG",
+        "https://images.ptausercontent.com/4c3bef68-2151-4262-bc8b-6c40256896e6.JPG",
+        "https://images.ptausercontent.com/e122d5ef-767a-423f-82a0-14bbcc18825f.JPG"
+      ]
+    },
+    {
+      "id": 51,
+      "type": "单选",
+      "title": "对于无向图 $$G=(V,E)$$, 下列选项中， 正确的是：",
+      "options": [
+        {
+          "label": "A",
+          "text": "当 $$|V|>|E|$$ 时，$$G$$ 一定是连通的"
+        },
+        {
+          "label": "B",
+          "text": "当 $$|V|<|E|$$ 时，$$G$$ 一定是连通的"
+        },
+        {
+          "label": "C",
+          "text": "当 $$|V|=|E|-1$$ 时，$$G$$ 一定是不连通的"
+        },
+        {
+          "label": "D",
+          "text": "当$$|V|>|E|+1$$ 时，$$G$$ 一定是不连通的"
+        }
+      ],
+      "correctAnswer": [
+        "当$$|V|>|E|+1$$ 时，$$G$$ 一定是不连通的"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 52,
+      "type": "单选",
+      "title": "用邻接矩阵\n\n存储的有向图有多少个强连通分量？",
+      "options": [
+        {
+          "label": "A",
+          "text": "1"
+        },
+        {
+          "label": "B",
+          "text": "4"
+        },
+        {
+          "label": "C",
+          "text": "5"
+        },
+        {
+          "label": "D",
+          "text": "6"
+        }
+      ],
+      "correctAnswer": [
+        "4"
+      ],
+      "selectedAnswer": [],
+      "images": [
+        "https://images.ptausercontent.com/3a66d628-4022-469a-a892-86fe69af7eae.JPG"
+      ]
+    },
+    {
+      "id": 53,
+      "type": "单选",
+      "title": "对有向图\n\n以下哪个是其正确的逆邻接表？",
+      "options": [
+        {
+          "label": "A",
+          "text": ""
+        },
+        {
+          "label": "B",
+          "text": ""
+        },
+        {
+          "label": "C",
+          "text": ""
+        },
+        {
+          "label": "D",
+          "text": ""
+        }
+      ],
+      "correctAnswer": [
+        ""
+      ],
+      "selectedAnswer": [],
+      "images": [
+        "https://images.ptausercontent.com/706384cb-024b-4cc7-8557-b08886eb3fa0.JPG",
+        "https://images.ptausercontent.com/82d25c5a-98b7-4e26-b544-d00f9b51b999.JPG",
+        "https://images.ptausercontent.com/090a0394-e95c-4bb7-bce2-b26c4764a456.JPG",
+        "https://images.ptausercontent.com/fda3e234-595f-4db0-8ec5-27fa9aa5ba7d.JPG",
+        "https://images.ptausercontent.com/25ff9b4c-1a67-4552-8217-a943d0111fda.JPG"
+      ]
+    },
+    {
+      "id": 54,
+      "type": "单选",
+      "title": "用邻接表\n\n存储的无向图有多少个连通分量？",
+      "options": [
+        {
+          "label": "A",
+          "text": "1"
+        },
+        {
+          "label": "B",
+          "text": "4"
+        },
+        {
+          "label": "C",
+          "text": "5"
+        },
+        {
+          "label": "D",
+          "text": "6"
+        }
+      ],
+      "correctAnswer": [
+        "4"
+      ],
+      "selectedAnswer": [],
+      "images": [
+        "https://images.ptausercontent.com/706384cb-024b-4cc7-8557-b08886eb3fa0.JPG"
+      ]
+    },
+    {
+      "id": 55,
+      "type": "单选",
+      "title": "下列说法不正确的是：",
+      "options": [
+        {
+          "label": "A",
+          "text": "图的遍历是从给定的源点出发每一个顶点仅被访问一次"
+        },
+        {
+          "label": "B",
+          "text": "遍历的基本算法有两种：深度遍历和广度遍历"
+        },
+        {
+          "label": "C",
+          "text": "图的深度遍历是一个递归过程"
+        },
+        {
+          "label": "D",
+          "text": "图的深度遍历不适用于有向图"
+        }
+      ],
+      "correctAnswer": [
+        "图的深度遍历不适用于有向图"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 56,
+      "type": "单选",
+      "title": "在图中自d点开始进行深度优先遍历算法可能得到的结果为：",
+      "options": [
+        {
+          "label": "A",
+          "text": "d,a,c,f,e,b"
+        },
+        {
+          "label": "B",
+          "text": "d,a,e,b,c,f"
+        },
+        {
+          "label": "C",
+          "text": "d,e,a,c,f,b"
+        },
+        {
+          "label": "D",
+          "text": "d,f,c,e,a,b"
+        }
+      ],
+      "correctAnswer": [
+        "d,e,a,c,f,b"
+      ],
+      "selectedAnswer": [],
+      "images": [
+        "https://images.ptausercontent.com/16"
+      ]
+    },
+    {
+      "id": 57,
+      "type": "单选",
+      "title": "给定无向带权图如下，以下哪个是从顶点 a 出发深度优先搜索遍历该图的顶点序列（多个顶点可以选择时按字母序）？",
+      "options": [
+        {
+          "label": "A",
+          "text": "abecdfhg"
+        },
+        {
+          "label": "B",
+          "text": "abcdehgf"
+        },
+        {
+          "label": "C",
+          "text": "abcdefgh"
+        },
+        {
+          "label": "D",
+          "text": "abchgfde"
+        }
+      ],
+      "correctAnswer": [
+        "abecdfhg"
+      ],
+      "selectedAnswer": [],
+      "images": [
+        "https://images.ptausercontent.com/df0f1881-cae3-45a4-9409-f334edc2bfba.JPG"
+      ]
+    },
+    {
+      "id": 58,
+      "type": "单选",
+      "title": "给定一个图的邻接矩阵如下，则从V1出发的深度优先遍历序列（DFS，有多种选择时小标号优先）是：",
+      "options": [
+        {
+          "label": "A",
+          "text": "V1, V2, V4, V3, V6, V8, V10, V9, V7, V5"
+        },
+        {
+          "label": "B",
+          "text": "V1, V2, V3, V4, V5, V6, V7, V9, V8, V10"
+        },
+        {
+          "label": "C",
+          "text": "V1, V2, V4, V6, V8, V10, V9, V7, V5, V3"
+        },
+        {
+          "label": "D",
+          "text": "V1, V2, V3, V5, V7, V9, V10, V6, V8, V4"
+        }
+      ],
+      "correctAnswer": [
+        "V1, V2, V4, V3, V6, V8, V10, V9, V7, V5"
+      ],
+      "selectedAnswer": [],
+      "images": [
+        "https://images.ptausercontent.com/165b8021-8357-409c-9ba9-b9efa4a88265.JPG"
+      ]
+    },
+    {
+      "id": 59,
+      "type": "单选",
+      "title": "图的广度优先遍历类似于二叉树的：",
+      "options": [
+        {
+          "label": "A",
+          "text": "层次遍历"
+        },
+        {
+          "label": "B",
+          "text": "中序遍历"
+        },
+        {
+          "label": "C",
+          "text": "后序遍历"
+        },
+        {
+          "label": "D",
+          "text": "先序遍历"
+        }
+      ],
+      "correctAnswer": [
+        "层次遍历"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 60,
+      "type": "单选",
+      "title": "给定用邻接表存储的有向图：\n\n以下哪个序列**不可能**是该图的广度优先遍历序列？",
+      "options": [
+        {
+          "label": "A",
+          "text": "A、B、C、D、E、F"
+        },
+        {
+          "label": "B",
+          "text": "A、B、C、E、D、F"
+        },
+        {
+          "label": "C",
+          "text": "A、D、B、C、E、F"
+        },
+        {
+          "label": "D",
+          "text": "A、C、B、D、E、F"
+        }
+      ],
+      "correctAnswer": [
+        "A、D、B、C、E、F"
+      ],
+      "selectedAnswer": [],
+      "images": [
+        "https://images.ptausercontent.com/090a0394-e95c-4bb7-bce2-b26c4764a456.JPG"
+      ]
+    },
+    {
+      "id": 61,
+      "type": "单选",
+      "title": "给定用邻接矩阵存储的有向图：\n\n以下哪个序列**不可能**是该图的广度优先遍历序列？",
+      "options": [
+        {
+          "label": "A",
+          "text": "A、B、C、D、E、F"
+        },
+        {
+          "label": "B",
+          "text": "B、A、C、E、D、F"
+        },
+        {
+          "label": "C",
+          "text": "C、B、A、D、F、E"
+        },
+        {
+          "label": "D",
+          "text": "E、F、D、B、C、A"
+        }
+      ],
+      "correctAnswer": [
+        "C、B、A、D、F、E"
+      ],
+      "selectedAnswer": [],
+      "images": [
+        "https://images.ptausercontent.com/8d218c58-d5fd-4fab-beaa-bc2e35c41dd4.JPG"
+      ]
+    },
+    {
+      "id": 62,
+      "type": "单选",
+      "title": "我们用一个有向图来表示航空公司所有航班的航线。下列哪种算法最适合解决找给定两城市间最经济的飞行路线问题？",
+      "options": [
+        {
+          "label": "A",
+          "text": "Dijkstra算法"
+        },
+        {
+          "label": "B",
+          "text": "Kruskal算法"
+        },
+        {
+          "label": "C",
+          "text": "深度优先搜索"
+        },
+        {
+          "label": "D",
+          "text": "拓扑排序算法"
+        }
+      ],
+      "correctAnswer": [
+        "Dijkstra算法"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 63,
+      "type": "单选",
+      "title": "数据结构中Dijkstra算法用来解决哪个问题？",
+      "options": [
+        {
+          "label": "A",
+          "text": "关键路径"
+        },
+        {
+          "label": "B",
+          "text": "最短路径"
+        },
+        {
+          "label": "C",
+          "text": "拓扑排序"
+        },
+        {
+          "label": "D",
+          "text": "字符串匹配"
+        }
+      ],
+      "correctAnswer": [
+        "最短路径"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 64,
+      "type": "单选",
+      "title": "试利用 Dijkstra 算法求下图中从顶点 A 到其他顶点的最短距离及对应的路径。下列那个序列给出了可能的顶点收集顺序？",
+      "options": [
+        {
+          "label": "A",
+          "text": "ACFEDBG"
+        },
+        {
+          "label": "B",
+          "text": "ACDBFEG"
+        },
+        {
+          "label": "C",
+          "text": "ACDGFBE"
+        },
+        {
+          "label": "D",
+          "text": "ABCDEFG"
+        }
+      ],
+      "correctAnswer": [
+        "ACDBFEG"
+      ],
+      "selectedAnswer": [],
+      "images": [
+        "https://images.ptausercontent.com/d364d3f8-4075-4560-bda7-c8c7f81a4a91.JPG"
+      ]
+    },
+    {
+      "id": 65,
+      "type": "单选",
+      "title": "试利用Floyed算法，求下图所示有向图的各对顶点之间的最短路径。下列选项哪个给出了正确的最短路径长度矩阵和最短路径矩阵？",
+      "options": [
+        {
+          "label": "A",
+          "text": ""
+        },
+        {
+          "label": "B",
+          "text": ""
+        },
+        {
+          "label": "C",
+          "text": ""
+        },
+        {
+          "label": "D",
+          "text": ""
+        }
+      ],
+      "correctAnswer": [
+        ""
+      ],
+      "selectedAnswer": [],
+      "images": [
+        "https://images.ptausercontent.com/28ca4a0d-47c4-4ec0-a733-d73b4c170224.JPG",
+        "https://images.ptausercontent.com/2400d631-7bf0-4b14-94a1-2ed908002491.JPG",
+        "https://images.ptausercontent.com/0ce8385f-4e76-47ba-9abd-6f42029869e8.JPG",
+        "https://images.ptausercontent.com/6ff33616-0e94-45f6-9848-94ac581a7ffb.JPG",
+        "https://images.ptausercontent.com/51cc76b9-d3b6-4ec6-bdf7-cfb542755b8b.JPG"
+      ]
+    },
+    {
+      "id": 66,
+      "type": "单选",
+      "title": "使用 Dijkstra 算法求下图中从顶点 1 到其余各顶点的最短路径，将当前找到的从顶点 1 到顶点 2、3、4、5 的最短路径长度保存在数组 dist 中，求出第二条最短路径后，dist 中的内容更新为：",
+      "options": [
+        {
+          "label": "A",
+          "text": "26、3、14、6"
+        },
+        {
+          "label": "B",
+          "text": "25、3、14、6"
+        },
+        {
+          "label": "C",
+          "text": "21、3、14、6"
+        },
+        {
+          "label": "D",
+          "text": "15、3、14、6"
+        }
+      ],
+      "correctAnswer": [
+        "21、3、14、6"
+      ],
+      "selectedAnswer": [],
+      "images": [
+        "https://images.ptausercontent.com/57b88fca-1a65-47b9-ac88-4d188fb92ede.png"
+      ]
+    },
+    {
+      "id": 67,
+      "type": "单选",
+      "title": "Prim算法通过（  ）方法保证不构成回路",
+      "options": [
+        {
+          "label": "A",
+          "text": "DFS"
+        },
+        {
+          "label": "B",
+          "text": "并查集"
+        },
+        {
+          "label": "C",
+          "text": "标记数组"
+        },
+        {
+          "label": "D",
+          "text": "BFS"
+        }
+      ],
+      "correctAnswer": [
+        "标记数组"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 68,
+      "type": "单选",
+      "title": "Prim算法中dist数组中dist[i]存放的是（  ）",
+      "options": [
+        {
+          "label": "A",
+          "text": "进入到顶点i的边上的最小权值"
+        },
+        {
+          "label": "B",
+          "text": "从起点到顶点i的最短路径长度"
+        },
+        {
+          "label": "C",
+          "text": "从顶点i出发的边上的最小权值"
+        },
+        {
+          "label": "D",
+          "text": "从顶点i到起点的最短路径长度"
+        }
+      ],
+      "correctAnswer": [
+        "进入到顶点i的边上的最小权值"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 69,
+      "type": "单选",
+      "title": "给定有权无向图的邻接矩阵如下，其最小生成树的总权重是：",
+      "options": [
+        {
+          "label": "A",
+          "text": "10"
+        },
+        {
+          "label": "B",
+          "text": "11"
+        },
+        {
+          "label": "C",
+          "text": "12"
+        },
+        {
+          "label": "D",
+          "text": "14"
+        }
+      ],
+      "correctAnswer": [
+        "10"
+      ],
+      "selectedAnswer": [],
+      "images": [
+        "https://images.ptausercontent.com/25"
+      ]
+    },
+    {
+      "id": 70,
+      "type": "单选",
+      "title": "在求最小生成树时，Prim算法更适合于\\_\\_\\_\\_。",
+      "options": [
+        {
+          "label": "A",
+          "text": "有向图"
+        },
+        {
+          "label": "B",
+          "text": "无向图"
+        },
+        {
+          "label": "C",
+          "text": "稀疏图"
+        },
+        {
+          "label": "D",
+          "text": "稠密图"
+        }
+      ],
+      "correctAnswer": [
+        "稠密图"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 71,
+      "type": "单选",
+      "title": "在求最小生成树时，Kruskal算法更适合于\\_\\_\\_\\_。",
+      "options": [
+        {
+          "label": "A",
+          "text": "有向图"
+        },
+        {
+          "label": "B",
+          "text": "无向图"
+        },
+        {
+          "label": "C",
+          "text": "稀疏图"
+        },
+        {
+          "label": "D",
+          "text": "稠密图"
+        }
+      ],
+      "correctAnswer": [
+        "稀疏图"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 72,
+      "type": "单选",
+      "title": "以下算法中用于求解最小生成树的是（  ）",
+      "options": [
+        {
+          "label": "A",
+          "text": "Prim算法"
+        },
+        {
+          "label": "B",
+          "text": "Dijkstra算法"
+        },
+        {
+          "label": "C",
+          "text": "Floyd算法"
+        },
+        {
+          "label": "D",
+          "text": "深度优先搜索算法"
+        }
+      ],
+      "correctAnswer": [
+        "Prim算法"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 73,
+      "type": "单选",
+      "title": "最短路径的生成算法可用（）。",
+      "options": [
+        {
+          "label": "A",
+          "text": "Kruskal算法"
+        },
+        {
+          "label": "B",
+          "text": "Dijkstra算法"
+        },
+        {
+          "label": "C",
+          "text": "prim算法"
+        },
+        {
+          "label": "D",
+          "text": "哈夫曼算法"
+        }
+      ],
+      "correctAnswer": [
+        "Dijkstra算法"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 74,
+      "type": "单选",
+      "title": "将序列{ 2, 12, 16, 88, 5, 10, 34 }排序。若前2趟排序的结果如下：\n\n- 第1趟排序后：2, 12, 16, 10, 5, 34, 88\n- 第2趟排序后：2, 5, 10, 12, 16, 34, 88\n\n则可能的排序算法是：",
+      "options": [
+        {
+          "label": "A",
+          "text": "冒泡排序"
+        },
+        {
+          "label": "B",
+          "text": "归并排序"
+        },
+        {
+          "label": "C",
+          "text": "插入排序"
+        },
+        {
+          "label": "D",
+          "text": "快速排序"
+        }
+      ],
+      "correctAnswer": [
+        "冒泡排序"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 75,
+      "type": "单选",
+      "title": "顺序查找法适合于存储结构为（    ）的线性表。",
+      "options": [
+        {
+          "label": "A",
+          "text": "散列存储"
+        },
+        {
+          "label": "B",
+          "text": "顺序存储或链式存储"
+        },
+        {
+          "label": "C",
+          "text": "压缩存储"
+        },
+        {
+          "label": "D",
+          "text": "索引存储"
+        }
+      ],
+      "correctAnswer": [
+        "顺序存储或链式存储"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 76,
+      "type": "单选",
+      "title": "元素{3,50,27,46,44,20}通过冒泡法排序（从小到大），第一趟的结果是（    ）。",
+      "options": [
+        {
+          "label": "A",
+          "text": "{3,27,46,44,20,50}"
+        },
+        {
+          "label": "B",
+          "text": "{3,46,27,44,20,50}"
+        },
+        {
+          "label": "C",
+          "text": "{3,20,28,44,46,50}"
+        },
+        {
+          "label": "D",
+          "text": "{3,27,20,46,44,50}"
+        }
+      ],
+      "correctAnswer": [
+        "{3,27,46,44,20,50}"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 77,
+      "type": "单选",
+      "title": "下面四种排序算法中，稳定的算法是：",
+      "options": [
+        {
+          "label": "A",
+          "text": "堆排序"
+        },
+        {
+          "label": "B",
+          "text": "希尔排序"
+        },
+        {
+          "label": "C",
+          "text": "归并排序"
+        },
+        {
+          "label": "D",
+          "text": "快速排序"
+        }
+      ],
+      "correctAnswer": [
+        "归并排序"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 78,
+      "type": "单选",
+      "title": "对一组数据{ 2，12，16，88，5，10 }进行排序，若前三趟排序结果如下：\n第一趟排序结果：2，12，16，5，10，88\n第二趟排序结果：2，12，5，10，16，88\n第三趟排序结果：2，5，10，12，16，88\n则采用的排序方法可能是：",
+      "options": [
+        {
+          "label": "A",
+          "text": "冒泡排序"
+        },
+        {
+          "label": "B",
+          "text": "希尔排序"
+        },
+        {
+          "label": "C",
+          "text": "归并排序"
+        },
+        {
+          "label": "D",
+          "text": "基数排序"
+        }
+      ],
+      "correctAnswer": [
+        "冒泡排序"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 79,
+      "type": "单选",
+      "title": "排序算法的效率\n\n插入排序的时间复杂度为 ▁▁▁▁▁ 。",
+      "options": [
+        {
+          "label": "A",
+          "text": "$$O(n \\log_2 n)$$"
+        },
+        {
+          "label": "B",
+          "text": "$$O(n \\sqrt{n})$$"
+        },
+        {
+          "label": "C",
+          "text": "$$O(n ^ 2)$$"
+        },
+        {
+          "label": "D",
+          "text": "$$O(2 ^ n)$$"
+        }
+      ],
+      "correctAnswer": [
+        "$$O(n ^ 2)$$"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 80,
+      "type": "单选",
+      "title": "下面关于哈希查找的说法，正确的是（  ）",
+      "options": [
+        {
+          "label": "A",
+          "text": "构造哈希函数时，用除留余数法是最好的"
+        },
+        {
+          "label": "B",
+          "text": "用链地址法处理冲突时，总是在链首插入同义词"
+        },
+        {
+          "label": "C",
+          "text": "用链地址法处理冲突时，不会引起二次聚集现象"
+        },
+        {
+          "label": "D",
+          "text": "哈希查找只能用链地址法处理冲突"
+        }
+      ],
+      "correctAnswer": [
+        "用链地址法处理冲突时，不会引起二次聚集现象"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 81,
+      "type": "单选",
+      "title": "对n个元素的表做顺序查找时，若查找每个元素的概率相同，则平均查找长度为（     ）",
+      "options": [
+        {
+          "label": "A",
+          "text": "(n-1)/2"
+        },
+        {
+          "label": "B",
+          "text": "n/2"
+        },
+        {
+          "label": "C",
+          "text": "(n+1)/2"
+        },
+        {
+          "label": "D",
+          "text": "n"
+        }
+      ],
+      "correctAnswer": [
+        "(n+1)/2"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 82,
+      "type": "单选",
+      "title": "排序算法的效率\n\n堆排序的时间复杂度为 ▁▁▁▁▁ 。",
+      "options": [
+        {
+          "label": "A",
+          "text": "$$O(n \\sqrt{n})$$"
+        },
+        {
+          "label": "B",
+          "text": "$$O(n \\log_2 n)$$"
+        },
+        {
+          "label": "C",
+          "text": "$$O(2^n)$$"
+        },
+        {
+          "label": "D",
+          "text": "$$O(n^2)$$"
+        }
+      ],
+      "correctAnswer": [
+        "$$O(n \\log_2 n)$$"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 83,
+      "type": "单选",
+      "title": "对一组数据(2，12，16，88，5，10)进行排序，若前三趟排序结果如下:\n\n第一趟:2，12，16，5，10，88\n\n第二趟:2，12，5，10，16，88\n\n第三趟:2，5，10，12，16，88\n\n则采用的排序方法可能是（   ）",
+      "options": [
+        {
+          "label": "A",
+          "text": "冒泡排序"
+        },
+        {
+          "label": "B",
+          "text": "希尔排序"
+        },
+        {
+          "label": "C",
+          "text": "归并排序"
+        },
+        {
+          "label": "D",
+          "text": "基数排序"
+        }
+      ],
+      "correctAnswer": [
+        "冒泡排序"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 84,
+      "type": "单选",
+      "title": "对一组数据（84，47，25，15，21）排序，数据的排列次序在排序的过程中的变化为:\n\n初始序列           84 47 25 15 21\n第一趟排序结果 15 47 25 84 21\n第二趟排序结果15 21 25 84 47\n第三趟排序结果15 21 25 84 47\n\n则采用的排序是 (        )。",
+      "options": [
+        {
+          "label": "A",
+          "text": "选择排序"
+        },
+        {
+          "label": "B",
+          "text": "冒泡排序"
+        },
+        {
+          "label": "C",
+          "text": "快速排序"
+        },
+        {
+          "label": "D",
+          "text": "插入排序"
+        }
+      ],
+      "correctAnswer": [
+        "选择排序"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 85,
+      "type": "单选",
+      "title": "从未排序序列中依次取出元素与已排序序列中的元素进行比较,将其放入已排序序列的正确位置上的方法,这种排序方法称为(    )。",
+      "options": [
+        {
+          "label": "A",
+          "text": "归并排序"
+        },
+        {
+          "label": "B",
+          "text": "冒泡排序"
+        },
+        {
+          "label": "C",
+          "text": "插入排序"
+        },
+        {
+          "label": "D",
+          "text": "选择排序"
+        }
+      ],
+      "correctAnswer": [
+        "插入排序"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 86,
+      "type": "单选",
+      "title": "采用初始增量为4的希尔排序法对关键字序列{15，10，4，26，14，2，13，19，17，5， 9，23}，按照关键字值递增的次序排序，一趟扫描后的结果为 （    ）",
+      "options": [
+        {
+          "label": "A",
+          "text": "{14，2，4，19，15，5，9，23，17，10，13，26}"
+        },
+        {
+          "label": "B",
+          "text": "{2，9，4，26，14，15，13，19，17，5，10，23}"
+        },
+        {
+          "label": "C",
+          "text": "{10，4，15，14，2，13，19，16，5，9，23，26}"
+        },
+        {
+          "label": "D",
+          "text": "{10，15，4，2，14，13，19，16，5，9，23，26}"
+        }
+      ],
+      "correctAnswer": [
+        "{14，2，4，19，15，5，9，23，17，10，13，26}"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 87,
+      "type": "单选",
+      "title": "在以下排序方法中，最耗费内存的是\\_\\_\\_\\_。",
+      "options": [
+        {
+          "label": "A",
+          "text": "快速排序"
+        },
+        {
+          "label": "B",
+          "text": "堆排序"
+        },
+        {
+          "label": "C",
+          "text": "二路归并排序"
+        },
+        {
+          "label": "D",
+          "text": "直接插入排序"
+        }
+      ],
+      "correctAnswer": [
+        "二路归并排序"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 88,
+      "type": "单选",
+      "title": "下列关键字序列中，构成大根堆的是（    ）。",
+      "options": [
+        {
+          "label": "A",
+          "text": "5，8，1，3，9，6，2，7"
+        },
+        {
+          "label": "B",
+          "text": "9，8，1，7，5，6，2，3"
+        },
+        {
+          "label": "C",
+          "text": "9，8，6，3，5，1，2，7"
+        },
+        {
+          "label": "D",
+          "text": "9，8，6，7，5，1，2，3"
+        }
+      ],
+      "correctAnswer": [
+        "9，8，6，7，5，1，2，3"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 89,
+      "type": "填空",
+      "title": "请写出下图用普里姆算法从顶点A出发生成最小生成树每一步加入的边。\n\n\n\n(1) \n\n(2) \n\n(3) \n\n(4) \n\n(5) \n\n注：顶点 X 到 Y 的无向边简记作：XY 或 YX。",
+      "options": [],
+      "correctAnswer": [
+        "AB",
+        "BC",
+        "CD",
+        "DE",
+        "EF"
+      ],
+      "selectedAnswer": [],
+      "images": [
+        "https://images.ptausercontent.com/e25aea3e-6c66-49d7-b5e3-387602aa80a8.png"
+      ]
+    },
+    {
+      "id": 90,
+      "type": "填空",
+      "title": "请写出下图用克鲁斯卡尔算法生成最小生成树每一步加入的边。\n\n\n\n(1) \n\n(2) \n\n(3) \n\n(4) \n\n(5) \n\n注：顶点 X 到 Y 的无向边简记作：XY 或 YX。",
+      "options": [],
+      "correctAnswer": [
+        "BF",
+        "CD",
+        "AF",
+        "AC",
+        "DE"
+      ],
+      "selectedAnswer": [],
+      "images": [
+        "https://images.ptausercontent.com/1c8a3fdb-c07f-4bee-9a74-78a396103d25.png"
+      ]
+    }
+]
