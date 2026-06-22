@@ -1,7 +1,6 @@
 import type { QuestionBank } from '../types/types';
 import scriptContent from '../assets/script.js?raw';
 
-import AlgorithmAnalysisAndDesign from '../assets/data/算法分析选择题.json'
 import DataStructureAssignment from '../assets/data/数据结构作业1.json'
 import DataStructureAssignment2 from '../assets/data/数据结构期末复习题.json'
 
@@ -27,12 +26,6 @@ export const USERSCRIPT_CONTENT = `// ==UserScript==
 export const FULL_USERSCRIPT = scriptContent;
 
 export const DEFAULT_BANKS: QuestionBank[] = [
-  {
-    id: 'default-algorithm',
-    name: '算法分析选择、判断题',
-    createdAt: 1765255903202,
-    questions: AlgorithmAnalysisAndDesign
-  },
   {
     id: 'default-data-structure',
     name: '数据结构作业题',
