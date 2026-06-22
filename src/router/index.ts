@@ -58,7 +58,7 @@ const routes: Array<RouteRecordRaw> = [
 ]
 
 const router = createRouter({
-  history: createWebHistory('/Good-Review-VueVersion/'),
+  history: createWebHistory('/Good-Review/'),
   routes,
   scrollBehavior(to, from, savedPosition) {
     // 路由切换时滚动到顶部
