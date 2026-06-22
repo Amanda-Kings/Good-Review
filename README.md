@@ -9,7 +9,7 @@
 
 **现代化的在线复习平台 | 让学习变得更加高效和愉悦**
 
-[🚀 在线体验](https://xiehuang01.github.io/Good-Review-VueVersion/) | [📖 使用指南](#使用指南) | [🛠️ 开发文档](#开发指南)
+[🚀 在线体验](https://azen-li.github.io/Good-Review-VueVersion/) | [📖 使用指南](#使用指南) | [🛠️ 开发文档](#开发指南)
 
 </div>
 
@@ -54,7 +54,7 @@
 
 ```bash
 # 克隆项目
-git clone https://github.com/Xiehuang01/Good-Review-VueVersion.git
+git clone https://github.com/Azen-Li/Good-Review-VueVersion.git
 cd Good-Review-VueVersion
 
 # 安装依赖
@@ -263,13 +263,26 @@ export default defineConfig({
 
 ### 问题反馈
 
-- 🐛 [报告 Bug](https://github.com/Xiehuang01/Good-Review-VueVersion/issues/new?template=bug_report.md)
-- 💡 [功能建议](https://github.com/Xiehuang01/Good-Review-VueVersion/issues/new?template=feature_request.md)
-- 💬 [讨论交流](https://github.com/Xiehuang01/Good-Review-VueVersion/discussions)
+- 🐛 [报告 Bug](https://github.com/Azen-Li/Good-Review-VueVersion/issues/new?template=bug_report.md)
+- 💡 [功能建议](https://github.com/Azen-Li/Good-Review-VueVersion/issues/new?template=feature_request.md)
+- 💬 [讨论交流](https://github.com/Azen-Li/Good-Review-VueVersion/discussions)
+
+## 🔖 项目来源与改进说明
+
+本项目基于 [Xiehuang01/Good-Review-VueVersion](https://github.com/Xiehuang01/Good-Review-VueVersion) 二次开发。
+
+- 原项目作者：[Xiehuang01](https://github.com/Xiehuang01)
+- 原项目地址：https://github.com/Xiehuang01/Good-Review-VueVersion
+- 当前维护者：[Azen-Li](https://github.com/Azen-Li)
+- 当前项目地址：https://github.com/Azen-Li/Good-Review-VueVersion
+
+本项目在原项目基础上进行了题库修正、本地图片资源化、公式渲染、路由调整等改进。
+
+题库内容及题目图片仅供学习与复习使用，相关内容版权归其原始权利方所有。如需公开分发，请确认题库及图片来源允许再发布。
 
 ## 📄 许可证
 
-本项目采用 [MIT 许可证](LICENSE)。
+本项目沿用原项目 README 声明的 [MIT 许可证](LICENSE)。重新分发或二次开发时，请保留原项目作者、项目来源及许可证说明。
 
 ## 🙏 致谢
 
@@ -284,6 +297,6 @@ export default defineConfig({
 
 **如果这个项目对你有帮助，请给个 ⭐ Star 支持一下！**
 
-Made with ❤️ by [Xiehuang01](https://github.com/Xiehuang01)
+Original project by [Xiehuang01](https://github.com/Xiehuang01). Modified and maintained by [Azen-Li](https://github.com/Azen-Li).
 
 </div>

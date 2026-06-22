@@ -36,7 +36,7 @@
             
             <!-- Logo Area -->
             <router-link 
-              to="/"
+              to="/guide"
               class="flex items-center cursor-pointer group select-none flex-shrink-0"
             >
               <div class="relative">
@@ -56,7 +56,7 @@
             <!-- Nav Items -->
             <div class="flex items-center gap-1 sm:gap-2 flex-shrink-0">
               <router-link 
-                to="/"
+                to="/guide"
                 :class="[
                   'px-2 sm:px-4 py-2 rounded-xl text-sm font-bold transition-all flex items-center gap-1.5',
                   $route.name === 'Home' 
@@ -313,7 +313,7 @@
               稍后再说
             </button>
             <a
-              href="https://github.com/Xiehuang01/Good-Review-VueVersion"
+              href="https://github.com/Azen-Li/Good-Review-VueVersion"
               target="_blank"
               rel="noopener noreferrer"
               @click="showGithubModal = false"

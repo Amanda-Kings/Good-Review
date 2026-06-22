@@ -10,6 +10,10 @@ import QuizView from '@/views/QuizView.vue'
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
+    redirect: '/dashboard'
+  },
+  {
+    path: '/guide',
     name: 'Home',
     component: HomeView,
     meta: {
@@ -53,7 +57,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     // 404 重定向到首页
     path: '/:pathMatch(.*)*',
-    redirect: '/'
+    redirect: '/dashboard'
   }
 ]
 
