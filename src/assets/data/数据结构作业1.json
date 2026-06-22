@@ -1006,11 +1006,11 @@
         }
       ],
       "correctAnswer": [
-        "4"
+        "5"
       ],
       "selectedAnswer": [],
       "images": [
-        "https://images.ptausercontent.com/33238e6c-deab-46df-9ca1-8a6336d4da51.png"
+        "images/question-assets/33238e6c-deab-46df-9ca1-8a6336d4da51.png"
       ]
     },
     {
@@ -1076,31 +1076,31 @@
       "options": [
         {
           "label": "A",
-          "text": ""
+          "text": "A"
         },
         {
           "label": "B",
-          "text": ""
+          "text": "B"
         },
         {
           "label": "C",
-          "text": ""
+          "text": "C"
         },
         {
           "label": "D",
-          "text": ""
+          "text": "D"
         }
       ],
       "correctAnswer": [
-        ""
+        "D"
       ],
       "selectedAnswer": [],
       "images": [
-        "https://images.ptausercontent.com/c1a5c52a-448f-46bb-9c61-5688b7d306b8.JPG",
-        "https://images.ptausercontent.com/a64046f3-222c-4958-8600-e2d020453271.JPG",
-        "https://images.ptausercontent.com/7947c101-35e9-4ceb-9a51-9673c1bf196f.JPG",
-        "https://images.ptausercontent.com/4c3bef68-2151-4262-bc8b-6c40256896e6.JPG",
-        "https://images.ptausercontent.com/e122d5ef-767a-423f-82a0-14bbcc18825f.JPG"
+        "images/question-assets/c1a5c52a-448f-46bb-9c61-5688b7d306b8.jpg",
+        "images/question-assets/a64046f3-222c-4958-8600-e2d020453271.jpg",
+        "images/question-assets/7947c101-35e9-4ceb-9a51-9673c1bf196f.jpg",
+        "images/question-assets/4c3bef68-2151-4262-bc8b-6c40256896e6.jpg",
+        "images/question-assets/e122d5ef-767a-423f-82a0-14bbcc18825f.jpg"
       ]
     },
     {
@@ -1154,11 +1154,11 @@
         }
       ],
       "correctAnswer": [
-        "4"
+        "1"
       ],
       "selectedAnswer": [],
       "images": [
-        "https://images.ptausercontent.com/3a66d628-4022-469a-a892-86fe69af7eae.JPG"
+        "images/question-assets/3a66d628-4022-469a-a892-86fe69af7eae.jpg"
       ]
     },
     {
@@ -1168,31 +1168,31 @@
       "options": [
         {
           "label": "A",
-          "text": ""
+          "text": "A"
         },
         {
           "label": "B",
-          "text": ""
+          "text": "B"
         },
         {
           "label": "C",
-          "text": ""
+          "text": "C"
         },
         {
           "label": "D",
-          "text": ""
+          "text": "D"
         }
       ],
       "correctAnswer": [
-        ""
+        "B"
       ],
       "selectedAnswer": [],
       "images": [
-        "https://images.ptausercontent.com/706384cb-024b-4cc7-8557-b08886eb3fa0.JPG",
-        "https://images.ptausercontent.com/82d25c5a-98b7-4e26-b544-d00f9b51b999.JPG",
-        "https://images.ptausercontent.com/090a0394-e95c-4bb7-bce2-b26c4764a456.JPG",
-        "https://images.ptausercontent.com/fda3e234-595f-4db0-8ec5-27fa9aa5ba7d.JPG",
-        "https://images.ptausercontent.com/25ff9b4c-1a67-4552-8217-a943d0111fda.JPG"
+        "images/question-assets/706384cb-024b-4cc7-8557-b08886eb3fa0.jpg",
+        "images/question-assets/82d25c5a-98b7-4e26-b544-d00f9b51b999.jpg",
+        "images/question-assets/090a0394-e95c-4bb7-bce2-b26c4764a456.jpg",
+        "images/question-assets/fda3e234-595f-4db0-8ec5-27fa9aa5ba7d.jpg",
+        "images/question-assets/25ff9b4c-1a67-4552-8217-a943d0111fda.jpg"
       ]
     },
     {
@@ -1218,11 +1218,11 @@
         }
       ],
       "correctAnswer": [
-        "4"
+        "1"
       ],
       "selectedAnswer": [],
       "images": [
-        "https://images.ptausercontent.com/706384cb-024b-4cc7-8557-b08886eb3fa0.JPG"
+        "images/question-assets/706384cb-024b-4cc7-8557-b08886eb3fa0.jpg"
       ]
     },
     {
@@ -1280,7 +1280,7 @@
       ],
       "selectedAnswer": [],
       "images": [
-        "https://images.ptausercontent.com/16"
+        "images/question-assets/16.jpg"
       ]
     },
     {
@@ -1306,11 +1306,11 @@
         }
       ],
       "correctAnswer": [
-        "abecdfhg"
+        "abcdefgh"
       ],
       "selectedAnswer": [],
       "images": [
-        "https://images.ptausercontent.com/df0f1881-cae3-45a4-9409-f334edc2bfba.JPG"
+        "images/question-assets/df0f1881-cae3-45a4-9409-f334edc2bfba.jpg"
       ]
     },
     {
@@ -1340,7 +1340,7 @@
       ],
       "selectedAnswer": [],
       "images": [
-        "https://images.ptausercontent.com/165b8021-8357-409c-9ba9-b9efa4a88265.JPG"
+        "images/question-assets/165b8021-8357-409c-9ba9-b9efa4a88265.jpg"
       ]
     },
     {
@@ -1394,11 +1394,11 @@
         }
       ],
       "correctAnswer": [
-        "A、D、B、C、E、F"
+        "A、B、C、E、D、F"
       ],
       "selectedAnswer": [],
       "images": [
-        "https://images.ptausercontent.com/090a0394-e95c-4bb7-bce2-b26c4764a456.JPG"
+        "images/question-assets/090a0394-e95c-4bb7-bce2-b26c4764a456.jpg"
       ]
     },
     {
@@ -1428,7 +1428,7 @@
       ],
       "selectedAnswer": [],
       "images": [
-        "https://images.ptausercontent.com/8d218c58-d5fd-4fab-beaa-bc2e35c41dd4.JPG"
+        "images/question-assets/8d218c58-d5fd-4fab-beaa-bc2e35c41dd4.jpg"
       ]
     },
     {
@@ -1510,11 +1510,11 @@
         }
       ],
       "correctAnswer": [
-        "ACDBFEG"
+        "ACFEDBG"
       ],
       "selectedAnswer": [],
       "images": [
-        "https://images.ptausercontent.com/d364d3f8-4075-4560-bda7-c8c7f81a4a91.JPG"
+        "images/question-assets/d364d3f8-4075-4560-bda7-c8c7f81a4a91.jpg"
       ]
     },
     {
@@ -1524,31 +1524,31 @@
       "options": [
         {
           "label": "A",
-          "text": ""
+          "text": "A"
         },
         {
           "label": "B",
-          "text": ""
+          "text": "B"
         },
         {
           "label": "C",
-          "text": ""
+          "text": "C"
         },
         {
           "label": "D",
-          "text": ""
+          "text": "D"
         }
       ],
       "correctAnswer": [
-        ""
+        "C"
       ],
       "selectedAnswer": [],
       "images": [
-        "https://images.ptausercontent.com/28ca4a0d-47c4-4ec0-a733-d73b4c170224.JPG",
-        "https://images.ptausercontent.com/2400d631-7bf0-4b14-94a1-2ed908002491.JPG",
-        "https://images.ptausercontent.com/0ce8385f-4e76-47ba-9abd-6f42029869e8.JPG",
-        "https://images.ptausercontent.com/6ff33616-0e94-45f6-9848-94ac581a7ffb.JPG",
-        "https://images.ptausercontent.com/51cc76b9-d3b6-4ec6-bdf7-cfb542755b8b.JPG"
+        "images/question-assets/28ca4a0d-47c4-4ec0-a733-d73b4c170224.jpg",
+        "images/question-assets/2400d631-7bf0-4b14-94a1-2ed908002491.jpg",
+        "images/question-assets/0ce8385f-4e76-47ba-9abd-6f42029869e8.jpg",
+        "images/question-assets/6ff33616-0e94-45f6-9848-94ac581a7ffb.jpg",
+        "images/question-assets/51cc76b9-d3b6-4ec6-bdf7-cfb542755b8b.jpg"
       ]
     },
     {
@@ -1578,7 +1578,7 @@
       ],
       "selectedAnswer": [],
       "images": [
-        "https://images.ptausercontent.com/57b88fca-1a65-47b9-ac88-4d188fb92ede.png"
+        "images/question-assets/57b88fca-1a65-47b9-ac88-4d188fb92ede.png"
       ]
     },
     {
@@ -1660,17 +1660,17 @@
         }
       ],
       "correctAnswer": [
-        "10"
+        "14"
       ],
       "selectedAnswer": [],
       "images": [
-        "https://images.ptausercontent.com/25"
+        "images/question-assets/25.jpg"
       ]
     },
     {
       "id": 70,
       "type": "单选",
-      "title": "在求最小生成树时，Prim算法更适合于\\_\\_\\_\\_。",
+      "title": "在求最小生成树时，Prim算法更适合于____。",
       "options": [
         {
           "label": "A",
@@ -1698,7 +1698,7 @@
     {
       "id": 71,
       "type": "单选",
-      "title": "在求最小生成树时，Kruskal算法更适合于\\_\\_\\_\\_。",
+      "title": "在求最小生成树时，Kruskal算法更适合于____。",
       "options": [
         {
           "label": "A",
@@ -1802,7 +1802,7 @@
         }
       ],
       "correctAnswer": [
-        "冒泡排序"
+        "快速排序"
       ],
       "selectedAnswer": [],
       "images": []
@@ -2146,7 +2146,7 @@
     {
       "id": 87,
       "type": "单选",
-      "title": "在以下排序方法中，最耗费内存的是\\_\\_\\_\\_。",
+      "title": "在以下排序方法中，最耗费内存的是____。",
       "options": [
         {
           "label": "A",
@@ -2206,14 +2206,14 @@
       "options": [],
       "correctAnswer": [
         "AB",
-        "BC",
-        "CD",
-        "DE",
-        "EF"
+        "BF",
+        "FD",
+        "FC",
+        "DE"
       ],
       "selectedAnswer": [],
       "images": [
-        "https://images.ptausercontent.com/e25aea3e-6c66-49d7-b5e3-387602aa80a8.png"
+        "images/question-assets/e25aea3e-6c66-49d7-b5e3-387602aa80a8.png"
       ]
     },
     {
@@ -2222,15 +2222,15 @@
       "title": "请写出下图用克鲁斯卡尔算法生成最小生成树每一步加入的边。\n\n\n\n(1) \n\n(2) \n\n(3) \n\n(4) \n\n(5) \n\n注：顶点 X 到 Y 的无向边简记作：XY 或 YX。",
       "options": [],
       "correctAnswer": [
+        "AE",
+        "FD",
         "BF",
-        "CD",
-        "AF",
-        "AC",
-        "DE"
+        "DE",
+        "CD"
       ],
       "selectedAnswer": [],
       "images": [
-        "https://images.ptausercontent.com/1c8a3fdb-c07f-4bee-9a74-78a396103d25.png"
+        "images/question-assets/1c8a3fdb-c07f-4bee-9a74-78a396103d25.png"
       ]
     }
 ]

@@ -207,7 +207,7 @@
           </div>
           <div :class="getTextClasses(opt)">
              <span v-if="!isJudgment" class="mr-3 opacity-60 font-black">{{ opt.label }}.</span>
-             {{ getOptionText(opt) }}
+             <span v-html="renderInlineMath(getOptionText(opt))"></span>
           </div>
         </div>
       </div>
@@ -235,7 +235,7 @@
               <div class="w-full bg-white/50 rounded-2xl border border-white/50 p-4 text-lg font-bold shadow-sm overflow-x-auto">
                 <div v-for="(ans, idx) in question.correctAnswer" :key="idx" class="mb-2 last:mb-0">
                     <div v-if="isHtml(ans)" :class="['font-mono bg-emerald-50 text-emerald-700 p-2 rounded border border-emerald-200']">{{ ans }}</div>
-                    <pre v-else class="whitespace-pre-wrap font-mono">{{ ans }}</pre>
+                    <pre v-else class="whitespace-pre-wrap font-mono" v-html="renderInlineMath(ans)"></pre>
                 </div>
               </div>
           </div>
@@ -548,7 +548,97 @@ const checkAnswer = (q: QuestionItem, userAns: string[]) => {
   return s1.every((val, index) => normalizeText(val) === normalizeText(s2[index]))
 }
 
+const escapeHtml = (text: string) => text
+  .replace(/&/g, '&amp;')
+  .replace(/</g, '&lt;')
+  .replace(/>/g, '&gt;')
+  .replace(/"/g, '&quot;')
+  .replace(/'/g, '&#39;')
+
+const formatMathExpression = (raw: string) => {
+  let expression = escapeHtml(raw.trim())
+    .replace(/\\left|\\right/g, '')
+    .replace(/\\Theta/g, '&Theta;')
+    .replace(/\\Omega/g, '&Omega;')
+    .replace(/\\omega/g, '&omega;')
+    .replace(/\\log/g, 'log')
+    .replace(/\\ln/g, 'ln')
+    .replace(/\\times/g, '&times;')
+    .replace(/\\cdot/g, '&middot;')
+    .replace(/\\leq?/g, '&le;')
+    .replace(/\\geq?/g, '&ge;')
+    .replace(/\\neq/g, '&ne;')
+    .replace(/\\infty/g, '&infin;')
+    .replace(/\s+/g, ' ')
+
+  expression = expression
+    .replace(/\^\{([^{}]+)\}/g, '<sup>$1</sup>')
+    .replace(/_\{([^{}]+)\}/g, '<sub>$1</sub>')
+    .replace(/\^([A-Za-z0-9+\-]+)/g, '<sup>$1</sup>')
+    .replace(/_([A-Za-z0-9+\-]+)/g, '<sub>$1</sub>')
+
+  return expression
+}
+
+const mathInlineClass = 'inline-flex items-baseline rounded-md bg-white/60 px-1.5 py-0.5 font-serif italic text-slate-900 ring-1 ring-slate-200/70'
+
+const renderMathSpan = (expression: string) =>
+  `<span class="${mathInlineClass}">${formatMathExpression(expression)}</span>`
+
+const renderInlineMath = (text: string) => {
+  if (!text) return ''
+
+  let result = ''
+  let lastIndex = 0
+  const mathRegex = /\$\$([\s\S]+?)\$\$/g
+  let match: RegExpExecArray | null
+
+  while ((match = mathRegex.exec(text)) !== null) {
+    result += escapeHtml(text.slice(lastIndex, match.index))
+    result += renderMathSpan(match[1])
+    lastIndex = mathRegex.lastIndex
+  }
+
+  result += escapeHtml(text.slice(lastIndex))
+  return result
+}
+
 const renderTitle = (title: string) => {
+  const fenceRegex = /```(\w+)?\s*\n?([\s\S]*?)```/g
+  const fencedParts: ReturnType<typeof h>[] = []
+  let lastIndex = 0
+  let match: RegExpExecArray | null
+
+  while ((match = fenceRegex.exec(title)) !== null) {
+    const textPart = title.slice(lastIndex, match.index)
+    if (textPart) {
+      fencedParts.push(h('div', {
+        class: 'text-xl md:text-3xl font-bold text-slate-800 leading-relaxed drop-shadow-sm select-text whitespace-pre-wrap',
+        innerHTML: renderInlineMath(textPart.trimEnd())
+      }))
+    }
+
+    const code = match[2].replace(/^\r?\n/, '').replace(/\r?\n$/, '')
+    fencedParts.push(h('div', { class: 'rounded-2xl border border-slate-300/50 bg-slate-900/5 p-4 shadow-sm overflow-x-auto' }, [
+      h('pre', {
+        class: 'text-base md:text-lg font-mono whitespace-pre-wrap text-slate-800 leading-relaxed drop-shadow-sm select-text'
+      }, code)
+    ]))
+
+    lastIndex = fenceRegex.lastIndex
+  }
+
+  if (fencedParts.length > 0) {
+    const tail = title.slice(lastIndex)
+    if (tail) {
+      fencedParts.push(h('div', {
+        class: 'text-xl md:text-3xl font-bold text-slate-800 leading-relaxed drop-shadow-sm select-text whitespace-pre-wrap',
+        innerHTML: renderInlineMath(tail.trimStart())
+      }))
+    }
+    return h('div', { class: 'space-y-4' }, fencedParts)
+  }
+
   // 检查是否包含HTML标签
   const hasHtmlTags = title.includes('<') && title.includes('>')
   
@@ -626,8 +716,9 @@ const renderTitle = (title: string) => {
   }
   
   return h('h2', { 
-    class: 'text-xl md:text-3xl font-bold text-slate-800 leading-relaxed drop-shadow-sm select-text' 
-  }, title)
+    class: 'text-xl md:text-3xl font-bold text-slate-800 leading-relaxed drop-shadow-sm select-text',
+    innerHTML: renderInlineMath(title)
+  })
 }
 
 const isHtml = (text: string) => {
@@ -902,7 +993,8 @@ const getBlankCount = (title: string) => {
   // 计算题目中填空的数量，支持多种格式：
   // 1. 括号格式：（ ）、( )
   // 2. 下划线格式：______、________
-  // 3. 单个空格格式：被中文字符包围的单个空格
+  // 3. 编号占位格式：(1)、（2）
+  // 4. 单个空格格式：被中文字符包围的单个空格
   
   let count = 0
   
@@ -917,10 +1009,24 @@ const getBlankCount = (title: string) => {
   if (underlineMatches) {
     count += underlineMatches.length
   }
+
+  // 检测编号占位格式，如最小生成树题中的 (1) (2) (3)。
+  // 只在出现至少两个从 1 开始的连续编号时计数，避免普通题号被误判为多个填空。
+  const numberedMatches = Array.from(title.matchAll(/[（(]\s*(\d+)\s*[）)]/g))
+    .map(match => Number(match[1]))
+  if (numberedMatches.length > 1) {
+    const uniqueNumbers = Array.from(new Set(numberedMatches)).sort((a, b) => a - b)
+    const isSequentialFromOne = uniqueNumbers.every((num, index) => num === index + 1)
+    if (isSequentialFromOne) {
+      count += uniqueNumbers.length
+    }
+  }
   
   // 检测单个空格格式：被中文字符包围的单个空格
   // 先移除括号内的空格，然后检测被中文字符包围的单个空格
-  let titleWithoutBrackets = title.replace(/[（(]\s*[）)]/g, '')
+  let titleWithoutBrackets = title
+    .replace(/[（(]\s*[）)]/g, '')
+    .replace(/[（(]\s*\d+\s*[）)]/g, '')
   // 匹配：中文字符 + 空格 + 中文字符
   const chineseSpaceMatches = titleWithoutBrackets.match(/[\u4e00-\u9fff]\s[\u4e00-\u9fff]/g)
   if (chineseSpaceMatches) {
@@ -1131,6 +1237,7 @@ const renderMarkdown = (text: string) => {
   if (!text) return ''
   
   return text
+    .replace(/\$\$([\s\S]+?)\$\$/g, (_, expression) => renderMathSpan(expression))
     // 粗体
     .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
     // 斜体

@@ -3,6 +3,7 @@ import scriptContent from '../assets/script.js?raw';
 
 import AlgorithmAnalysisAndDesign from '../assets/data/算法分析选择题.json'
 import DataStructureAssignment from '../assets/data/数据结构作业1.json'
+import DataStructureAssignment2 from '../assets/data/数据结构期末复习题.json'
 
 export const USERSCRIPT_CONTENT = `// ==UserScript==
 // @name         Chaoxing Work Scraper
@@ -37,5 +38,11 @@ export const DEFAULT_BANKS: QuestionBank[] = [
     name: '数据结构作业题',
     createdAt: 1765255903203,
     questions: DataStructureAssignment
+  },
+  {
+    id: 'default-data-structure-2',
+    name: '数据结构期末复习题',
+    createdAt: 1765255903204,
+    questions: DataStructureAssignment2
   }
 ];

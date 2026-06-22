@@ -1,0 +1,1550 @@
+[
+    {
+      "id": 1,
+      "type": "判断",
+      "title": "抽象数据类型中，描述数据类型的方法与实现操作的算法和编程语言有关。",
+      "options": [
+        {
+          "label": "true",
+          "text": "正确"
+        },
+        {
+          "label": "false",
+          "text": "错误"
+        }
+      ],
+      "correctAnswer": [
+        "错误"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 2,
+      "type": "判断",
+      "title": "抽象数据类型中，描述数据类型的方法与存放数据的机器有关。",
+      "options": [
+        {
+          "label": "true",
+          "text": "正确"
+        },
+        {
+          "label": "false",
+          "text": "错误"
+        }
+      ],
+      "correctAnswer": [
+        "错误"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 3,
+      "type": "判断",
+      "title": "抽象数据类型中，描述数据类型的方法与数据存储的物理结构无关。",
+      "options": [
+        {
+          "label": "true",
+          "text": "正确"
+        },
+        {
+          "label": "false",
+          "text": "错误"
+        }
+      ],
+      "correctAnswer": [
+        "正确"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 4,
+      "type": "判断",
+      "title": "数据项是数据的最小单元。",
+      "options": [
+        {
+          "label": "true",
+          "text": "正确"
+        },
+        {
+          "label": "false",
+          "text": "错误"
+        }
+      ],
+      "correctAnswer": [
+        "正确"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 5,
+      "type": "判断",
+      "title": "个人通信录中的人员之间不具有直接的逻辑关系。",
+      "options": [
+        {
+          "label": "true",
+          "text": "正确"
+        },
+        {
+          "label": "false",
+          "text": "错误"
+        }
+      ],
+      "correctAnswer": [
+        "正确"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 6,
+      "type": "判断",
+      "title": "超市收银台排队等候结账的顾客之间具有一对一的逻辑关系。",
+      "options": [
+        {
+          "label": "true",
+          "text": "正确"
+        },
+        {
+          "label": "false",
+          "text": "错误"
+        }
+      ],
+      "correctAnswer": [
+        "正确"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 7,
+      "type": "判断",
+      "title": "游乐园里的游客之间具有一对一的逻辑关系。",
+      "options": [
+        {
+          "label": "true",
+          "text": "正确"
+        },
+        {
+          "label": "false",
+          "text": "错误"
+        }
+      ],
+      "correctAnswer": [
+        "错误"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 8,
+      "type": "判断",
+      "title": "电脑里的文件夹与文件之间具有一对多的逻辑关系。",
+      "options": [
+        {
+          "label": "true",
+          "text": "正确"
+        },
+        {
+          "label": "false",
+          "text": "错误"
+        }
+      ],
+      "correctAnswer": [
+        "正确"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 9,
+      "type": "判断",
+      "title": "顺序表适合进行顺序访问和随机访问，单链表适合进行顺序访问、不适合进行随机访问。",
+      "options": [
+        {
+          "label": "true",
+          "text": "正确"
+        },
+        {
+          "label": "false",
+          "text": "错误"
+        }
+      ],
+      "correctAnswer": [
+        "正确"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 10,
+      "type": "判断",
+      "title": "单链表适合进行顺序访问和随机访问，顺序表适合进行顺序访问、不适合进行随机访问。",
+      "options": [
+        {
+          "label": "true",
+          "text": "正确"
+        },
+        {
+          "label": "false",
+          "text": "错误"
+        }
+      ],
+      "correctAnswer": [
+        "错误"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 11,
+      "type": "判断",
+      "title": "一般来讲，若线性表最频繁的操作是在中间插入和删除元素，则宜采用顺序实现，不宜采用链式实现。",
+      "options": [
+        {
+          "label": "true",
+          "text": "正确"
+        },
+        {
+          "label": "false",
+          "text": "错误"
+        }
+      ],
+      "correctAnswer": [
+        "错误"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 12,
+      "type": "判断",
+      "title": "一般来讲，若线性表最频繁的操作是在中间插入和删除元素，则宜采用链式实现，不宜采用顺序实现。",
+      "options": [
+        {
+          "label": "true",
+          "text": "正确"
+        },
+        {
+          "label": "false",
+          "text": "错误"
+        }
+      ],
+      "correctAnswer": [
+        "正确"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 13,
+      "type": "判断",
+      "title": "在单链表中，逻辑上相邻的元素，其物理位置必定相邻。",
+      "options": [
+        {
+          "label": "true",
+          "text": "正确"
+        },
+        {
+          "label": "false",
+          "text": "错误"
+        }
+      ],
+      "correctAnswer": [
+        "错误"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 14,
+      "type": "判断",
+      "title": "对单链表来说，只有从头结点开始才能访问到表中所有结点。",
+      "options": [
+        {
+          "label": "true",
+          "text": "正确"
+        },
+        {
+          "label": "false",
+          "text": "错误"
+        }
+      ],
+      "correctAnswer": [
+        "正确"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 15,
+      "type": "判断",
+      "title": "堆栈适合解决处理顺序与输入顺序相反的问题。",
+      "options": [
+        {
+          "label": "true",
+          "text": "正确"
+        },
+        {
+          "label": "false",
+          "text": "错误"
+        }
+      ],
+      "correctAnswer": [
+        "正确"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 16,
+      "type": "判断",
+      "title": "堆栈适合解决处理顺序与输入顺序相同的问题。",
+      "options": [
+        {
+          "label": "true",
+          "text": "正确"
+        },
+        {
+          "label": "false",
+          "text": "错误"
+        }
+      ],
+      "correctAnswer": [
+        "错误"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 17,
+      "type": "判断",
+      "title": "队列适合解决处理顺序与输入顺序相反的问题。",
+      "options": [
+        {
+          "label": "true",
+          "text": "正确"
+        },
+        {
+          "label": "false",
+          "text": "错误"
+        }
+      ],
+      "correctAnswer": [
+        "错误"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 18,
+      "type": "判断",
+      "title": "队列中允许插入的一端叫队头，允许删除的一端叫队尾。",
+      "options": [
+        {
+          "label": "true",
+          "text": "正确"
+        },
+        {
+          "label": "false",
+          "text": "错误"
+        }
+      ],
+      "correctAnswer": [
+        "错误"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 19,
+      "type": "判断",
+      "title": "在用数组表示的循环队列中，front值一定小于等于rear值。",
+      "options": [
+        {
+          "label": "true",
+          "text": "正确"
+        },
+        {
+          "label": "false",
+          "text": "错误"
+        }
+      ],
+      "correctAnswer": [
+        "错误"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 20,
+      "type": "判断",
+      "title": "循环队列也存在着空间溢出问题。",
+      "options": [
+        {
+          "label": "true",
+          "text": "正确"
+        },
+        {
+          "label": "false",
+          "text": "错误"
+        }
+      ],
+      "correctAnswer": [
+        "正确"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 21,
+      "type": "判断",
+      "title": "任何最小堆中从根结点到任一叶结点路径上的所有结点是有序的（从小到大）。",
+      "options": [
+        {
+          "label": "true",
+          "text": "正确"
+        },
+        {
+          "label": "false",
+          "text": "错误"
+        }
+      ],
+      "correctAnswer": [
+        "正确"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 22,
+      "type": "判断",
+      "title": "最大堆（大顶堆、max-heap）的前序遍历结果是从大到小排列的。",
+      "options": [
+        {
+          "label": "true",
+          "text": "正确"
+        },
+        {
+          "label": "false",
+          "text": "错误"
+        }
+      ],
+      "correctAnswer": [
+        "错误"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 23,
+      "type": "判断",
+      "title": "最大堆（大顶堆、max-heap）从根结点到其它任一结点的路径上的所有结点值是从大到小排列的。",
+      "options": [
+        {
+          "label": "true",
+          "text": "正确"
+        },
+        {
+          "label": "false",
+          "text": "错误"
+        }
+      ],
+      "correctAnswer": [
+        "正确"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 24,
+      "type": "判断",
+      "title": "哈夫曼树可能不唯一。",
+      "options": [
+        {
+          "label": "true",
+          "text": "正确"
+        },
+        {
+          "label": "false",
+          "text": "错误"
+        }
+      ],
+      "correctAnswer": [
+        "正确"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 25,
+      "type": "判断",
+      "title": "关于哈夫曼树\n\n哈夫曼树中一定没有度为 1 的结点。",
+      "options": [
+        {
+          "label": "true",
+          "text": "正确"
+        },
+        {
+          "label": "false",
+          "text": "错误"
+        }
+      ],
+      "correctAnswer": [
+        "正确"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 26,
+      "type": "判断",
+      "title": "哈夫曼树一定是完全二叉树。",
+      "options": [
+        {
+          "label": "true",
+          "text": "正确"
+        },
+        {
+          "label": "false",
+          "text": "错误"
+        }
+      ],
+      "correctAnswer": [
+        "错误"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 27,
+      "type": "判断",
+      "title": "用邻接表法存储图，占用的存储空间数只与图中结点个数有关，而与边数无关。",
+      "options": [
+        {
+          "label": "true",
+          "text": "正确"
+        },
+        {
+          "label": "false",
+          "text": "错误"
+        }
+      ],
+      "correctAnswer": [
+        "错误"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 28,
+      "type": "判断",
+      "title": "用邻接矩阵法存储图，占用的存储空间数只与图中结点个数有关，而与边数无关。",
+      "options": [
+        {
+          "label": "true",
+          "text": "正确"
+        },
+        {
+          "label": "false",
+          "text": "错误"
+        }
+      ],
+      "correctAnswer": [
+        "正确"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 29,
+      "type": "判断",
+      "title": "插入排序算法在每一趟都能选取出一个元素放在其最终的位置上。",
+      "options": [
+        {
+          "label": "true",
+          "text": "正确"
+        },
+        {
+          "label": "false",
+          "text": "错误"
+        }
+      ],
+      "correctAnswer": [
+        "错误"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 30,
+      "type": "判断",
+      "title": "排序算法中的比较次数与初始元素序列的排列无关。",
+      "options": [
+        {
+          "label": "true",
+          "text": "正确"
+        },
+        {
+          "label": "false",
+          "text": "错误"
+        }
+      ],
+      "correctAnswer": [
+        "错误"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 31,
+      "type": "判断",
+      "title": "在冒泡排序算法中，每一趟排序都能确定一个元素的最终位置",
+      "options": [
+        {
+          "label": "true",
+          "text": "正确"
+        },
+        {
+          "label": "false",
+          "text": "错误"
+        }
+      ],
+      "correctAnswer": [
+        "正确"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 32,
+      "type": "单选",
+      "title": "从逻辑上可将数据结构分为（ ）。",
+      "options": [
+        {
+          "label": "A",
+          "text": "动态结构和静态结构"
+        },
+        {
+          "label": "B",
+          "text": "紧凑结构和非紧凑结构"
+        },
+        {
+          "label": "C",
+          "text": "内部结构和外部结构"
+        },
+        {
+          "label": "D",
+          "text": "线性结构和非线性结构"
+        }
+      ],
+      "correctAnswer": [
+        "线性结构和非线性结构"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 33,
+      "type": "单选",
+      "title": "▁▁▁▁▁  是数据的基本单位，在计算机中通常作为一个整体进行考虑和处理。",
+      "options": [
+        {
+          "label": "A",
+          "text": "二进制位"
+        },
+        {
+          "label": "B",
+          "text": "数据元素"
+        },
+        {
+          "label": "C",
+          "text": "数据项"
+        },
+        {
+          "label": "D",
+          "text": "数据对象"
+        }
+      ],
+      "correctAnswer": [
+        "数据元素"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 34,
+      "type": "单选",
+      "title": "以下数据结构中，（    ）是非线性数据结构",
+      "options": [
+        {
+          "label": "A",
+          "text": "树"
+        },
+        {
+          "label": "B",
+          "text": "字符串"
+        },
+        {
+          "label": "C",
+          "text": "队"
+        },
+        {
+          "label": "D",
+          "text": "栈"
+        }
+      ],
+      "correctAnswer": [
+        "树"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 35,
+      "type": "单选",
+      "title": "下面算法的时间复杂度为 ▁▁▁▁▁。\n\n```c\nint foo(int n)\n{\n\tint i, m = n / 2, s = 0;\n\tfor (i = 1; i <= m; ++i)\n\t{\n\t\ts += i;\n\t}\n\treturn s;\n}\n```",
+      "options": [
+        {
+          "label": "A",
+          "text": "$$O(\\log_{2}n)$$"
+        },
+        {
+          "label": "B",
+          "text": "$$O(n)$$"
+        },
+        {
+          "label": "C",
+          "text": "$$O(\\sqrt{n})$$"
+        },
+        {
+          "label": "D",
+          "text": "$$O(n ^ 2)$$"
+        }
+      ],
+      "correctAnswer": [
+        "$$O(n)$$"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 36,
+      "type": "单选",
+      "title": "顺序存储表示中数据元素之间的逻辑关系是由（ ）表示的。",
+      "options": [
+        {
+          "label": "A",
+          "text": "指针"
+        },
+        {
+          "label": "B",
+          "text": "逻辑顺序"
+        },
+        {
+          "label": "C",
+          "text": "存储位置"
+        },
+        {
+          "label": "D",
+          "text": "问题上下文"
+        }
+      ],
+      "correctAnswer": [
+        "存储位置"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 37,
+      "type": "单选",
+      "title": "向一个有127个元素的顺序表中插入一个新元素并保持原来顺序不变，平均要移动的元素个数为（   ）",
+      "options": [
+        {
+          "label": "A",
+          "text": "8"
+        },
+        {
+          "label": "B",
+          "text": "63.5"
+        },
+        {
+          "label": "C",
+          "text": "63"
+        },
+        {
+          "label": "D",
+          "text": "7"
+        }
+      ],
+      "correctAnswer": [
+        "63.5"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 38,
+      "type": "单选",
+      "title": "线性表在 ▁▁▁▁▁ 情况下适合采用链式存储结构。",
+      "options": [
+        {
+          "label": "A",
+          "text": "线性表中数据元素的值需经常修改"
+        },
+        {
+          "label": "B",
+          "text": "线性表需经常插入或删除数据元素"
+        },
+        {
+          "label": "C",
+          "text": "线性表包含大量的数据元素"
+        },
+        {
+          "label": "D",
+          "text": "线性表的数据元素包含大量的数据项"
+        }
+      ],
+      "correctAnswer": [
+        "线性表需经常插入或删除数据元素"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 39,
+      "type": "单选",
+      "title": "循环队列的队满条件为 ( )。",
+      "options": [
+        {
+          "label": "A",
+          "text": "(sq.rear+1) % maxsize ==(sq.front+1) % maxsize"
+        },
+        {
+          "label": "B",
+          "text": "(sq.front+1) % maxsize ==sq.rear"
+        },
+        {
+          "label": "C",
+          "text": "(sq.rear+1) % maxsize ==sq.front"
+        },
+        {
+          "label": "D",
+          "text": "sq.rear ==sq.front"
+        }
+      ],
+      "correctAnswer": [
+        "(sq.rear+1) % maxsize ==sq.front"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 40,
+      "type": "单选",
+      "title": "若已知一队列用单向链表表示，该单向链表的当前状态（含3个对象）是：`1->2->3`，其中`x->y`表示`x`的下一节点是`y`。此时，如果将对象`4`入队，然后队列头的对象出队，则单向链表的状态是：",
+      "options": [
+        {
+          "label": "A",
+          "text": "`1->2->3`"
+        },
+        {
+          "label": "B",
+          "text": "`2->3->4`"
+        },
+        {
+          "label": "C",
+          "text": "`4->1->2`"
+        },
+        {
+          "label": "D",
+          "text": "答案不唯一"
+        }
+      ],
+      "correctAnswer": [
+        "`2->3->4`"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 41,
+      "type": "单选",
+      "title": "表达式`a*(b+c)-d`的后缀表达式是：",
+      "options": [
+        {
+          "label": "A",
+          "text": "`a b c + * d -`"
+        },
+        {
+          "label": "B",
+          "text": "`a b c d * + -`"
+        },
+        {
+          "label": "C",
+          "text": "`a b c * + d -`"
+        },
+        {
+          "label": "D",
+          "text": "`- + * a b c d`"
+        }
+      ],
+      "correctAnswer": [
+        "`a b c + * d -`"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 42,
+      "type": "单选",
+      "title": "元素A,B,C,D依次入栈，出栈无限制，则以下（ ）是可能的出栈序列。",
+      "options": [
+        {
+          "label": "A",
+          "text": "C, A, B, D"
+        },
+        {
+          "label": "B",
+          "text": "B, A, D, C"
+        },
+        {
+          "label": "C",
+          "text": "B, D, A, C"
+        },
+        {
+          "label": "D",
+          "text": "A, D, B, C"
+        }
+      ],
+      "correctAnswer": [
+        "B, A, D, C"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 43,
+      "type": "单选",
+      "title": "若二叉搜索树是有$$N$$个结点的完全二叉树，则不正确的说法是：",
+      "options": [
+        {
+          "label": "A",
+          "text": "平均查找效率是$$O(logN)$$"
+        },
+        {
+          "label": "B",
+          "text": "最大值一定在最后一层"
+        },
+        {
+          "label": "C",
+          "text": "最小值一定在叶结点上"
+        },
+        {
+          "label": "D",
+          "text": "中位值结点在根结点或根的左子树上"
+        }
+      ],
+      "correctAnswer": [
+        "最大值一定在最后一层"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 44,
+      "type": "单选",
+      "title": "对二叉搜索树进行什么遍历可以得到从小到大的排序序列？",
+      "options": [
+        {
+          "label": "A",
+          "text": "前序遍历"
+        },
+        {
+          "label": "B",
+          "text": "后序遍历"
+        },
+        {
+          "label": "C",
+          "text": "中序遍历"
+        },
+        {
+          "label": "D",
+          "text": "层次遍历"
+        }
+      ],
+      "correctAnswer": [
+        "中序遍历"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 45,
+      "type": "单选",
+      "title": "已知字符集{ a, b, c, d, e, f }，若各字符出现的次数分别为{ 6, 3, 8, 2, 10, 4 }，则对应字符集中各字符的哈夫曼编码可能是：",
+      "options": [
+        {
+          "label": "A",
+          "text": "00, 1011, 01, 1010, 11, 100"
+        },
+        {
+          "label": "B",
+          "text": "00, 100, 110, 000, 0010, 01"
+        },
+        {
+          "label": "C",
+          "text": "10, 1011, 11, 0011, 00, 010"
+        },
+        {
+          "label": "D",
+          "text": "0011, 10, 11, 0010, 01, 000"
+        }
+      ],
+      "correctAnswer": [
+        "00, 1011, 01, 1010, 11, 100"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 46,
+      "type": "单选",
+      "title": "一段由字符集{ a, b, c, d, e, f }组成的文本，字符集各字符出现的频次依次为{ 5, 6, 3, 7, 12, 1 }，使用哈夫曼编码进行文本压缩，则其中字符 b 的编码长度是：",
+      "options": [
+        {
+          "label": "A",
+          "text": "2位"
+        },
+        {
+          "label": "B",
+          "text": "3位"
+        },
+        {
+          "label": "C",
+          "text": "4位"
+        },
+        {
+          "label": "D",
+          "text": "5位"
+        }
+      ],
+      "correctAnswer": [
+        "2位"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 47,
+      "type": "单选",
+      "title": "关于图的邻接矩阵，下列哪个结论是正确的？",
+      "options": [
+        {
+          "label": "A",
+          "text": "有向图的邻接矩阵总是不对称的"
+        },
+        {
+          "label": "B",
+          "text": "有向图的邻接矩阵可以是对称的，也可以是不对称的"
+        },
+        {
+          "label": "C",
+          "text": "无向图的邻接矩阵总是不对称的"
+        },
+        {
+          "label": "D",
+          "text": "无向图的邻接矩阵可以是不对称的，也可以是对称的"
+        }
+      ],
+      "correctAnswer": [
+        "有向图的邻接矩阵可以是对称的，也可以是不对称的"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 48,
+      "type": "单选",
+      "title": "在任一有向图中，所有顶点的入度之和与所有顶点的出度之和的关系是：",
+      "options": [
+        {
+          "label": "A",
+          "text": "相等"
+        },
+        {
+          "label": "B",
+          "text": "大于等于"
+        },
+        {
+          "label": "C",
+          "text": "小于等于"
+        },
+        {
+          "label": "D",
+          "text": "不确定"
+        }
+      ],
+      "correctAnswer": [
+        "相等"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 49,
+      "type": "单选",
+      "title": "观察下面的无向图\n\n\n\n从顶点 A 出发按深度优先遍历不可能得到哪个序列？",
+      "options": [
+        {
+          "label": "A",
+          "text": "ABGFCDE"
+        },
+        {
+          "label": "B",
+          "text": "ABCDEFG"
+        },
+        {
+          "label": "C",
+          "text": "ABGDEFC"
+        },
+        {
+          "label": "D",
+          "text": "AGEDCBF"
+        }
+      ],
+      "correctAnswer": [
+        "ABGFCDE"
+      ],
+      "selectedAnswer": [],
+      "images": [
+        "images/question-assets/5dd744e8-a9d0-4f7d-8304-5a096b2a0d11.jpg"
+      ]
+    },
+    {
+      "id": 50,
+      "type": "单选",
+      "title": "图的遍历(广度优先)\n\n对下图进行广度优先遍历，得到的序列不可能为 ▁▁▁▁▁ 。",
+      "options": [
+        {
+          "label": "A",
+          "text": "BCFADE"
+        },
+        {
+          "label": "B",
+          "text": "DCEFBA"
+        },
+        {
+          "label": "C",
+          "text": "AFEBCD"
+        },
+        {
+          "label": "D",
+          "text": "CDFBAE"
+        }
+      ],
+      "correctAnswer": [
+        "CDFBAE"
+      ],
+      "selectedAnswer": [],
+      "images": [
+        "images/question-assets/629a7d5e-6eb7-4622-a10b-c45f21bba093.jpg"
+      ]
+    },
+    {
+      "id": 51,
+      "type": "单选",
+      "title": "数据结构中Dijkstra算法用来解决哪个问题。",
+      "options": [
+        {
+          "label": "A",
+          "text": "关键路径"
+        },
+        {
+          "label": "B",
+          "text": "最短路径"
+        },
+        {
+          "label": "C",
+          "text": "拓扑排序"
+        },
+        {
+          "label": "D",
+          "text": "最小生成树"
+        }
+      ],
+      "correctAnswer": [
+        "最短路径"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 52,
+      "type": "单选",
+      "title": "Dijkstra算法是____方法求出图中从某顶点到其余顶点的最短路径的。",
+      "options": [
+        {
+          "label": "A",
+          "text": "按长度递减的顺序求出图中某顶点到其余顶点的最短路径"
+        },
+        {
+          "label": "B",
+          "text": "按长度递增的顺序求出图中某顶点到其余顶点的最短路径"
+        },
+        {
+          "label": "C",
+          "text": "通过深度优先遍历求出图中某顶点到其余顶点的最短路径"
+        },
+        {
+          "label": "D",
+          "text": "通过广度优先遍历求出图中某顶点到其余顶点的最短路径"
+        }
+      ],
+      "correctAnswer": [
+        "按长度递增的顺序求出图中某顶点到其余顶点的最短路径"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 53,
+      "type": "单选",
+      "title": "在求最小生成树时，Prim算法更适合于____。",
+      "options": [
+        {
+          "label": "A",
+          "text": "有向图"
+        },
+        {
+          "label": "B",
+          "text": "无向图"
+        },
+        {
+          "label": "C",
+          "text": "稀疏图"
+        },
+        {
+          "label": "D",
+          "text": "稠密图"
+        }
+      ],
+      "correctAnswer": [
+        "稠密图"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 54,
+      "type": "单选",
+      "title": "任何一个带权无向连通图的最小生成树——",
+      "options": [
+        {
+          "label": "A",
+          "text": "是唯一的"
+        },
+        {
+          "label": "B",
+          "text": "是不唯一的"
+        },
+        {
+          "label": "C",
+          "text": "有可能不唯一"
+        },
+        {
+          "label": "D",
+          "text": "有可能不存在"
+        }
+      ],
+      "correctAnswer": [
+        "有可能不唯一"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 55,
+      "type": "单选",
+      "title": "以下二叉树的后序遍历序列是（  ）。",
+      "options": [
+        {
+          "label": "A",
+          "text": "DCEBFHGA"
+        },
+        {
+          "label": "B",
+          "text": "CDBEAFGH"
+        },
+        {
+          "label": "C",
+          "text": "ABCDEGFH"
+        },
+        {
+          "label": "D",
+          "text": "ABGCEFHD"
+        }
+      ],
+      "correctAnswer": [
+        "DCEBFHGA"
+      ],
+      "selectedAnswer": [],
+      "images": [
+        "images/question-assets/4d1b614f-d0e2-44d8-b05b-45cc082b595f.png"
+      ]
+    },
+    {
+      "id": 56,
+      "type": "单选",
+      "title": "以下二叉树的先序遍历序列是（  ）。",
+      "options": [
+        {
+          "label": "A",
+          "text": "ABGCEFHD"
+        },
+        {
+          "label": "B",
+          "text": "ABCDEGFH"
+        },
+        {
+          "label": "C",
+          "text": "CDBEAFGH"
+        },
+        {
+          "label": "D",
+          "text": "DCEBFHGA"
+        }
+      ],
+      "correctAnswer": [
+        "ABCDEGFH"
+      ],
+      "selectedAnswer": [],
+      "images": [
+        "images/question-assets/4d1b614f-d0e2-44d8-b05b-45cc082b595f.png"
+      ]
+    },
+    {
+      "id": 57,
+      "type": "单选",
+      "title": "将序列{ 2, 12, 16, 88, 5, 10, 34 }排序。若前2趟排序的结果如下：\n\n- 第1趟排序后：2, 12, 16, 10, 5, 34, 88\n- 第2趟排序后：2, 5, 10, 12, 16, 34, 88\n\n则可能的排序算法是：",
+      "options": [
+        {
+          "label": "A",
+          "text": "冒泡排序"
+        },
+        {
+          "label": "B",
+          "text": "归并排序"
+        },
+        {
+          "label": "C",
+          "text": "插入排序"
+        },
+        {
+          "label": "D",
+          "text": "快速排序"
+        }
+      ],
+      "correctAnswer": [
+        "快速排序"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 58,
+      "type": "单选",
+      "title": "对一组数据{ 2，12，16，88，5，10 }进行排序，若前三趟排序结果如下：\n第一趟排序结果：2，12，16，5，10，88\n第二趟排序结果：2，12，5，10，16，88\n第三趟排序结果：2，5，10，12，16，88\n则采用的排序方法可能是：",
+      "options": [
+        {
+          "label": "A",
+          "text": "冒泡排序"
+        },
+        {
+          "label": "B",
+          "text": "希尔排序"
+        },
+        {
+          "label": "C",
+          "text": "归并排序"
+        },
+        {
+          "label": "D",
+          "text": "基数排序"
+        }
+      ],
+      "correctAnswer": [
+        "冒泡排序"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 59,
+      "type": "单选",
+      "title": "对序列{15,9,7,8,20,-1,4}进行排序,进行一趟后数据的排列变为{9,15,7,8,20,-1,4},则采用的是(  )排序.",
+      "options": [
+        {
+          "label": "A",
+          "text": "选择"
+        },
+        {
+          "label": "B",
+          "text": "希尔"
+        },
+        {
+          "label": "C",
+          "text": "直接插入"
+        },
+        {
+          "label": "D",
+          "text": "冒泡"
+        }
+      ],
+      "correctAnswer": [
+        "直接插入"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 60,
+      "type": "单选",
+      "title": "顺序查找法适合于存储结构为（    ）的线性表。",
+      "options": [
+        {
+          "label": "A",
+          "text": "散列存储"
+        },
+        {
+          "label": "B",
+          "text": "顺序存储或链式存储"
+        },
+        {
+          "label": "C",
+          "text": "压缩存储"
+        },
+        {
+          "label": "D",
+          "text": "索引存储"
+        }
+      ],
+      "correctAnswer": [
+        "顺序存储或链式存储"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 61,
+      "type": "单选",
+      "title": "衡量查找算法效率的主要标准是（  ）",
+      "options": [
+        {
+          "label": "A",
+          "text": "元素个数"
+        },
+        {
+          "label": "B",
+          "text": "所需的存贮量"
+        },
+        {
+          "label": "C",
+          "text": "平均查找长度"
+        },
+        {
+          "label": "D",
+          "text": "算法难易程度"
+        }
+      ],
+      "correctAnswer": [
+        "平均查找长度"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 62,
+      "type": "填空",
+      "title": "请写出下图用普里姆算法从顶点A出发生成最小生成树每一步加入的边。\n\n\n\n(1) \n(2) \n(3) \n(4) \n(5) \n\n注：顶点 X 到 Y 的无向边简记作：XY 或 YX。",
+      "options": [],
+      "correctAnswer": [
+        "AB",
+        "AE",
+        "EF",
+        "FC",
+        "CD"
+      ],
+      "selectedAnswer": [],
+      "images": [
+        "images/question-assets/ba855df5-cbba-402b-9fec-f91e8dc49a5a.jpg"
+      ]
+    },
+    {
+      "id": 63,
+      "type": "填空",
+      "title": "请写出下图用克鲁斯卡尔算法生成最小生成树每一步加入的边。\n\n\n\n(1) \n(2) \n(3) \n(4) \n(5) \n\n注：顶点 X 到 Y 的无向边简记作：XY 或 YX。",
+      "options": [],
+      "correctAnswer": [
+        "EF",
+        "FC",
+        "AB",
+        "AE",
+        "CD"
+      ],
+      "selectedAnswer": [],
+      "images": [
+        "images/question-assets/ba855df5-cbba-402b-9fec-f91e8dc49a5a.jpg"
+      ]
+    },
+    {
+      "id": 64,
+      "type": "填空",
+      "title": "已知二叉树的先序遍历序列为\n\n```\nJAHICEDFGB\n```\n\n中序遍历序列为\n\n```\nHACIJDGFEB\n```\n\n则后序遍历序列为",
+      "options": [],
+      "correctAnswer": [
+        "HCIAGFDBEJ"
+        
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 65,
+      "type": "填空",
+      "title": "已知二叉树的后序遍历序列为\n\n```\nEFICBGAJDH\n```\n\n中序遍历序列为\n\n```\nEBIFCHAGDJ\n```\n\n则先序遍历序列为",
+      "options": [],
+      "correctAnswer": [
+        "HBECIFDAGJ"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 66,
+      "type": "填空",
+      "title": "给定一组数据{6，2，7，10，3，12}以它构造一棵哈夫曼树，则树高为(1)，带权路径长度WPL的值为(2)。",
+      "options": [],
+      "correctAnswer": [
+        "5",
+        "96"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    },
+    {
+      "id": 67,
+      "type": "填空",
+      "title": "若以{4，5，6，7，8}作为叶子结点的权值构造哈夫曼树，则其带权路径长度是 。",
+      "options": [],
+      "correctAnswer": [
+        "69"
+      ],
+      "selectedAnswer": [],
+      "images": []
+    }
+]
